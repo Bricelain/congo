@@ -1,0 +1,116 @@
+/* ============================
+   PAGE AMBASSADEUR
+   Style spécifique
+============================ */
+
+/* ---- Section principale ---- */
+.biographie {
+  padding: 80px 20px;
+  background: #f7f7f7;
+}
+
+.bio-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  padding: 40px;
+}
+
+/* ---- Photo ---- */
+.bio-photo img {
+  width: 300px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease;
+}
+.bio-photo img:hover {
+  transform: scale(1.05);
+}
+
+/* ---- Texte ---- */
+.bio-text {
+  flex: 1;
+  min-width: 300px;
+  color: #333;
+}
+
+.bio-text h1 {
+  font-size: 2.2em;
+  color: var(--vert);
+  margin-bottom: 5px;
+}
+
+.bio-text h2 {
+  font-size: 1.4em;
+  color: var(--rouge);
+  margin-bottom: 20px;
+}
+
+.bio-text p {
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.bio-text h3 {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  color: var(--jaune);
+  font-size: 1.3em;
+}
+
+/* ---- Timeline ---- */
+.timeline {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 20px;
+  border-left: 4px solid var(--vert);
+}
+
+.timeline li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  background: var(--rouge);
+  border-radius: 50%;
+}
+
+/* ---- Animations discrètes ---- */
+.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.hidden.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .bio-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 20px;
+  }
+  .bio-photo img {
+    width: 220px;
+  }
+}

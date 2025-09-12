@@ -1,0 +1,109 @@
+/* ============================
+   PAGE PASSEPORT
+   Style spécifique
+============================ */
+
+/* ---- Section principale ---- */
+.passeport-infos {
+  padding: 80px 20px;
+  background: #f7f7f7;
+}
+
+.passeport-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  padding: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ---- Titres ---- */
+.passeport-container h1 {
+  text-align: center;
+  font-size: 2.2em;
+  margin-bottom: 25px;
+  color: var(--vert);
+  font-weight: 700;
+}
+.passeport-container h2 {
+  color: var(--rouge);
+  font-size: 1.6em;
+  margin: 25px 0 15px;
+}
+.passeport-container h3 {
+  margin-top: 25px;
+  color: var(--jaune);
+  font-size: 1.3em;
+}
+
+/* ---- Textes ---- */
+.passeport-container p {
+  line-height: 1.7;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.passeport-container .note {
+  background: #fff6d5;
+  border-left: 5px solid var(--jaune);
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+}
+
+/* ---- Listes ---- */
+.passeport-container ul {
+  margin-left: 20px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+.passeport-container ul li {
+  margin-bottom: 8px;
+}
+
+/* ---- Bouton principal ---- */
+.cta-passport {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.btn-cta {
+  display: inline-block;
+  background: var(--vert);
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+.btn-cta:hover {
+  background: var(--rouge);
+}
+
+/* ---- Images décoratives ---- */
+.passport-img {
+  position: absolute;
+  width: 220px;
+  top: 150px;
+  opacity: 0.08;
+  z-index: 0;
+}
+.left-img {
+  left: 2%;
+}
+.right-img {
+  right: 2%;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .passeport-container {
+    padding: 30px 20px;
+  }
+  .passport-img {
+    display: none;
+  }
+}

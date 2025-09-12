@@ -1,0 +1,71 @@
+/* ============================
+   ANIMATIONS DIPLOMATIQUES
+   ============================ */
+
+/* 1. Animation du titre principal */
+h1, .caption h2 {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeZoomIn 1.5s ease forwards;
+}
+@keyframes fadeZoomIn {
+  from { opacity: 0; transform: translateY(20px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* 2. Logo avec halo lumineux subtil */
+.logo img {
+  animation: glowPulse 3s infinite alternate;
+}
+@keyframes glowPulse {
+  from { filter: drop-shadow(0 0 3px var(--vert)); }
+  to { filter: drop-shadow(0 0 12px var(--jaune)); }
+}
+
+/* 3. Paragraphes qui apparaissent progressivement */
+.caption p, .services p, .actus li {
+  opacity: 0;
+  animation: fadeInText 1s ease forwards;
+}
+.caption p { animation-delay: 0.5s; }
+.services p:nth-of-type(1) { animation-delay: 0.7s; }
+.services p:nth-of-type(2) { animation-delay: 1s; }
+.actus li:nth-child(1) { animation-delay: 0.6s; }
+.actus li:nth-child(2) { animation-delay: 0.9s; }
+.actus li:nth-child(3) { animation-delay: 1.2s; }
+
+@keyframes fadeInText {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 4. Apparition des containers / sections */
+.services, .passeport, .actus {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUp 1.2s ease forwards;
+}
+.services { animation-delay: 0.8s; }
+.passeport { animation-delay: 1.3s; }
+.actus { animation-delay: 1.8s; }
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* ============================
+   SCROLL ANIMATIONS
+   ============================ */
+
+/* Élément caché au départ */
+.hidden {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Quand visible */
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}

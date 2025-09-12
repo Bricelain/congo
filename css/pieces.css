@@ -1,0 +1,24 @@
+h1 { text-align: center; font-size: 2.2em; margin-bottom: 30px; }
+h2 {
+  margin-top: 25px; color: var(--vert);
+  font-size: 20px; border-bottom: 2px solid var(--vert);
+  padding-bottom: 5px;
+}
+ul { margin: 10px 0 20px 20px; }
+li { margin-bottom: 6px; }
+
+.important {
+  background: rgba(220,20,60,0.1);
+  border: 1px solid var(--rouge);
+  padding: 20px; border-radius: 8px; margin-top: 30px;
+}
+.important strong { color: var(--rouge); }
+
+a { color: var(--rouge); font-weight: bold; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.page-content,
+.container,
+section:first-of-type {
+  padding-top: 110px;
+}

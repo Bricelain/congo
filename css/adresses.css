@@ -1,0 +1,90 @@
+/* ============================
+   PAGE ADRESSES UTILES
+============================ */
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 90px 25px 60px;   /* 90px pour dégager le header fixe */
+  background: #f7f7f7;
+}
+
+main h1 {
+  text-align: center;
+  font-size: 2.4em;
+  color: var(--vert);
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+
+main h2 {
+  font-size: 1.6em;
+  margin-top: 45px;
+  margin-bottom: 15px;
+  color: var(--rouge);
+  border-left: 6px solid var(--jaune);
+  padding-left: 12px;
+  font-weight: 600;
+}
+
+main ul {
+  margin-left: 25px;
+  margin-bottom: 25px;
+  line-height: 1.7;
+  color: #333;
+}
+
+main ul li {
+  margin-bottom: 10px;
+}
+
+/* Liens */
+main a {
+  color: var(--vert);
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+main a:hover {
+  color: var(--rouge);
+}
+
+/* Mise en valeur des contacts (tel, email) */
+main li strong {
+  color: #000;
+  font-weight: 600;
+}
+
+/* Effet carte pour sections */
+main ul {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Footer cohérent avec le site */
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  main {
+    padding: 80px 15px 80px;
+  }
+  main h1 {
+    font-size: 2em;
+  }
+  main h2 {
+    font-size: 1.4em;
+  }
+}

@@ -1,0 +1,37 @@
+/* Formulaires */
+.form-container {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.form-container h2 {
+  margin-bottom: 20px;
+  color: var(--vert);
+}
+.form-container input,
+.form-container select,
+.form-container button {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+.form-container button {
+  background: var(--vert);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+.form-container button:hover {
+  background: var(--rouge);
+}
+
+.page-content,
+.container,
+section:first-of-type {
+  padding-top: 110px;
+}

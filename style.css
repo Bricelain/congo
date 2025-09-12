@@ -1,0 +1,533 @@
+/* ============================
+   RESET & VARIABLES
+============================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-main);
+}
+
+
+:root {
+  --vert: #009739;
+  --jaune: #FFD100;
+  --rouge: #D50032;
+  --gris: #f5f5f5;
+  --noir: #222;
+   --font-title: 'Merriweather', serif;
+  --font-body: 'Montserrat', sans-serif;
+    --shadow-soft: 0 6px 20px rgba(0,0,0,0.25);
+  --shadow-hover: 0 12px 30px rgba(0,0,0,0.35);
+}
+
+/* ============================
+   BODY & BACKGROUND
+============================ */
+body {
+  background: linear-gradient(-45deg, var(--vert), var(--jaune), var(--rouge), var(--vert));
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+  will-change: background-position;
+    display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  
+}
+
+body, p, a, li {
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+
+h1, h2, h3 {
+  background: linear-gradient(90deg, var(--vert), var(--jaune), var(--rouge));
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+    font-family: var(--font-title);
+  font-weight: 700;
+}
+
+/* Conteneur général */
+.container {
+  max-width: 1100px;
+  margin: 50px auto;
+  background: rgba(255,255,255,0.95);
+  padding: 40px;
+  border-radius: 12px;
+   box-shadow: var(--shadow-soft);
+}
+
+.container:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+/* Tableaux */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+table th {
+  background: var(--vert);
+  color: white;
+  font-weight: bold;
+}
+table tr:nth-child(even) { background: #f9f9f9; }
+table tr:hover { background: #f1f1f1; }
+
+/* Footer */
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  bottom: 0;
+  width: 100%;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ============================
+   HEADER MODERNE ANIMÉ
+============================ */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 40px;
+  background: #fff; /* tu peux mettre transparent si ton slider est derrière */
+  position: fixed;
+  height: 100px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+header .logo {
+  display: flex;
+  flex-direction: column; /* Logo + texte empilés */
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+  color: var(--vert);
+  font-size: 1.2em;
+  text-decoration: none;
+}
+
+header .logo img {
+  height: 55px;
+  margin-bottom: 4px;
+}
+
+header .logo span {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: var(--vert);
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* LOGO */
+.logo img {
+  height: 60px;
+  filter: drop-shadow(0 0 6px rgba(0,151,57,0.8));
+  animation: logoPulse 3s infinite alternate;
+}
+
+@keyframes logoPulse {
+  from { filter: drop-shadow(0 0 6px var(--vert)); }
+  to { filter: drop-shadow(0 0 20px var(--jaune)); }
+}
+
+.logo span {
+  font-weight: bold;
+  font-size: 1.3em;
+  margin-left: 12px;
+  background: linear-gradient(90deg, var(--vert), var(--jaune), var(--rouge));
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 5s linear infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* NAVIGATION */
+.navbar .menu {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 12px 6px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Ligne fluide sous les liens */
+.menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 3px;
+  width: 0;
+  background: linear-gradient(90deg, var(--vert), var(--jaune), var(--rouge));
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+.menu a:hover {
+  color: var(--jaune);
+  text-shadow: 0 0 8px var(--rouge);
+  transform: translateY(-2px);
+}
+
+/* SOUS-MENUS */
+.submenu {
+  position: absolute;
+  top: 120%;
+  left: 0;
+  min-width: 200px;
+  background: rgba(0,0,0,0.85);
+  border-radius: 10px;
+  padding: 10px 0;
+  display: none;
+  opacity: 0;
+  transform: translateY(15px);
+  box-shadow: 0 6px 25px rgba(0,0,0,0.3);
+  transition: all 0.4s ease;
+}
+
+.menu li:hover .submenu {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.submenu li a {
+  padding: 10px 20px;
+  display: block;
+  color: #fff;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.submenu li a:hover {
+  background: rgba(255,215,0,0.2);
+  transform: translateX(8px);
+  border-radius: 6px;
+}
+.navbar .menu > li > a {
+  color: var(--vert);
+  font-weight: 500;
+  padding: 8px 14px;
+  transition: all 0.3s ease;
+}
+
+.navbar .menu > li > a:hover {
+  color: var(--rouge);
+  text-decoration: underline;
+}
+
+/* ============================
+   MENU BURGER (mobile)
+============================ */
+.burger {
+  display: none;
+  width: 32px;
+  height: 24px;
+  position: relative;
+  cursor: pointer;
+}
+
+.burger span {
+  position: absolute;
+  height: 3px;
+  width: 100%;
+ background: var(--vert); /* ✅ vert au lieu de blanc */
+  left: 0;
+  border-radius: 3px;
+  transition: all 0.4s ease;
+}
+
+.burger span:nth-child(1) { top: 0; }
+.burger span:nth-child(2) { top: 10px; }
+.burger span:nth-child(3) { top: 20px; }
+
+.burger.active span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 10px;
+}
+.burger.active span:nth-child(2) { opacity: 0; }
+.burger.active span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 10px;
+}
+
+/* NAVIGATION MOBILE */
+@media(max-width: 1000px) {
+  .burger { display: block; }
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 260px;
+    background: rgba(0,0,0,0.95);
+    padding-top: 100px;
+    transition: right 0.5s ease;
+  }
+
+  .navbar.active { right: 0; }
+
+  .navbar .menu {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding-left: 25px;
+  }
+
+  .submenu {
+    position: static;
+    opacity: 1;
+    transform: none;
+    display: none;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .menu li:hover .submenu {
+    display: block;
+  }
+
+  /* Apparition progressive des liens */
+  .navbar.active .menu li {
+    opacity: 0;
+    transform: translateX(30px);
+    animation: fadeInLinks 0.5s forwards;
+  }
+
+  .navbar.active .menu li:nth-child(1) { animation-delay: 0.1s; }
+  .navbar.active .menu li:nth-child(2) { animation-delay: 0.2s; }
+  .navbar.active .menu li:nth-child(3) { animation-delay: 0.3s; }
+  .navbar.active .menu li:nth-child(4) { animation-delay: 0.4s; }
+  .navbar.active .menu li:nth-child(5) { animation-delay: 0.5s; }
+  .navbar.active .menu li:nth-child(6) { animation-delay: 0.6s; }
+
+  @keyframes fadeInLinks {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+/* ============================
+   SLIDER (allégé + plus petit)
+============================ */
+.slider {
+  width: 100%;
+  height: 450px; /* réduit */
+  overflow: hidden;
+  position: relative;
+  background: black;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+}
+.slides {
+  display: flex;
+  width: 400%;
+  height: 100%;
+  transition: 1s;
+}
+.slides input { display: none; }
+
+.slide {
+  width: 100%;
+  flex-shrink: 0;
+  position: relative;
+}
+.slide img {
+  width: 25%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.9) contrast(1.1);
+  transition: transform 2s ease, filter 2s ease, opacity 1s ease;
+  opacity: 0.95;
+}
+.slide img:hover {
+  transform: scale(1.05); /* zoom léger */
+  filter: brightness(1) saturate(1.2);
+  opacity: 1;
+}
+
+/* Légendes */
+.caption {
+  position: absolute;
+  bottom: 18%;
+  left: 8%;
+  max-width: 450px;
+  color: white;
+  animation: fadeInUp 1.5s ease;
+  text-shadow: 1px 1px 10px rgba(0,0,0,0.7);
+}
+.caption h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: var(--jaune);
+  animation: textGlow 2s infinite alternate;
+}
+.caption p {
+  font-size: 1em;
+  margin-bottom: 12px;
+}
+.btn-caption {
+  display: inline-block;
+  padding: 10px 20px;
+  background: var(--rouge);
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+  box-shadow: 0 0 10px rgba(213,0,50,0.6);
+}
+.btn-caption:hover {
+  background: var(--vert);
+  box-shadow: 0 0 20px var(--jaune);
+  transform: scale(1.05);
+}
+
+/* Animations caption */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes textGlow {
+  from { text-shadow: 0 0 10px var(--jaune), 0 0 20px var(--rouge), 0 0 30px var(--vert); }
+  to { text-shadow: 0 0 20px var(--rouge), 0 0 40px var(--jaune), 0 0 60px var(--vert); }
+}
+
+/* Navigation manuelle */
+.navigation-manual {
+  position: absolute;
+  width: 100%;
+  bottom: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+.manual-btn {
+  border: 2px solid white;
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.manual-btn:hover { background: var(--jaune); }
+
+/* Auto navigation */
+.navigation-auto {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  top: 10px;
+  gap: 8px;
+}
+.navigation-auto div {
+  border: 2px solid var(--jaune);
+  padding: 5px;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+/* Liens radio */
+#radio1:checked ~ .first { margin-left: 0; }
+#radio2:checked ~ .first { margin-left: -100%; }
+#radio3:checked ~ .first { margin-left: -200%; }
+#radio4:checked ~ .first { margin-left: -300%; }
+#radio1:checked ~ .navigation-auto .auto-btn1 { background: var(--jaune); }
+#radio2:checked ~ .navigation-auto .auto-btn2 { background: var(--rouge); }
+#radio3:checked ~ .navigation-auto .auto-btn3 { background: var(--vert); }
+#radio4:checked ~ .navigation-auto .auto-btn4 { background: var(--jaune); }
+
+/* ============================ FOOTER ============================ */
+footer {
+    background: #222;
+    color: white;
+    text-align: center; /* centre le texte */
+    padding: 15px;
+    position: relative; /* position normale */
+    width: 100%;
+    margin-top: auto; /* pousse le footer en bas si le contenu est petit */
+}
+
+/* Pour que le footer reste en bas même si le contenu est petit, on peut utiliser Flexbox sur le body */
+
+
+main {
+    flex: 1; /* prend tout l’espace disponible pour pousser le footer vers le bas */
+    padding-top: 110px; /* pour compenser le header fixe */
+}
+
+
+/* Icône login */
+.icon-login {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+/* Supprime les puces des sous-menus */
+.submenu {
+  list-style: none;   /* enlève les points */
+  padding: 0;         /* supprime l’espace par défaut */
+  margin: 0;          /* supprime la marge */
+}
+
+.submenu li {
+  padding-left: 0;    /* aligne bien le texte */
+}
+
+a:focus, button:focus {
+  outline: 3px solid var(--jaune);
+  outline-offset: 3px;
+}
+html {
+  scroll-padding-top: 110px; /* même valeur que le header */
+}

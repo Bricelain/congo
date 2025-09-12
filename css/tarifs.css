@@ -1,0 +1,95 @@
+/* ===========================
+   Page Tarifs - tarifs.css
+   =========================== */
+
+/* --- Ajustement pour header fixe --- */
+.tarifs-container {
+  padding-top: 100px;          /* Ajustez à la hauteur réelle du header */
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* --- Titre principal --- */
+.tarifs-container h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2rem;
+  color: #013220;              /* vert profond pour une touche institutionnelle */
+}
+
+/* --- Table générale --- */
+.tarifs-container table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+}
+
+/* --- En-tête de table --- */
+.tarifs-container thead th {
+  background-color: #006400;   /* vert ambassade */
+  color: #fff;
+  text-align: left;
+  padding: 14px 16px;
+  font-size: 1.1rem;
+}
+
+/* --- Corps de table --- */
+.tarifs-container tbody td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #ddd;
+  vertical-align: top;
+  line-height: 1.4;
+}
+
+/* Alternance de lignes pour lisibilité */
+.tarifs-container tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Colonne prix mise en avant */
+.tarifs-container td.price {
+  text-align: right;
+  font-weight: bold;
+  color: #006400;
+  white-space: nowrap;
+}
+
+/* Petits écrans : défilement horizontal */
+@media (max-width: 768px) {
+  .tarifs-container table {
+    display: block;
+    overflow-x: auto;
+    border: 0;
+  }
+  .tarifs-container thead {
+    display: none; /* version mobile type "cards" possible mais on garde simple */
+  }
+  .tarifs-container tbody td {
+    display: block;
+    text-align: left;
+    border-bottom: none;
+    padding: 8px 0;
+  }
+  .tarifs-container tbody tr {
+    margin-bottom: 20px;
+    display: block;
+    border-bottom: 2px solid #ddd;
+    padding: 10px;
+  }
+  .tarifs-container td.price {
+    text-align: left;
+    margin-top: 6px;
+  }
+}
+
+/* --- Footer --- */
+footer {
+  margin-top: 60px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+}

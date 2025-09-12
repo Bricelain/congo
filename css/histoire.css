@@ -1,0 +1,153 @@
+/* ================================
+   Page Histoire - Ambassade du Congo
+   ================================ */
+
+/* ----- Conteneur principal ----- */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 100px 20px 60px;       /* espace sous le header fixe */
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  color: #333;
+  line-height: 1.7;
+  background-color: #fafafa;
+}
+
+/* ----- Titres ----- */
+.container h1 {
+  text-align: center;
+  color: #013220;                /* vert profond institutionnel */
+  font-size: 2.4rem;
+  margin-bottom: 50px;
+}
+
+.section h2 {
+  color: #006400;
+  font-size: 1.8rem;
+  margin: 40px 0 20px;
+  border-left: 6px solid #006400;
+  padding-left: 12px;
+}
+
+.section h3 {
+  color: #013220;
+  margin: 20px 0 10px;
+}
+
+/* ----- Paragraphes ----- */
+.section p {
+  margin-bottom: 18px;
+  text-align: justify;
+}
+
+/* ----- Tableaux ----- */
+.section table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background: #fff;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+}
+
+.section th,
+.section td {
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.section th {
+  background: #006400;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ----- Liste à puces ----- */
+.section ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.section ul li {
+  margin-bottom: 8px;
+}
+
+/* ----- Onglets ----- */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 25px 0;
+}
+
+.tab-btn {
+  padding: 10px 18px;
+  border: 1px solid #006400;
+  background: #f0f0f0;
+  color: #013220;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+  background: #e6f2e6;
+}
+
+.tab-btn.active {
+  background: #006400;
+  color: #fff;
+}
+
+/* ----- Contenu des onglets ----- */
+.tab-content {
+  display: none;
+  padding: 20px;
+  background: #fff;
+  border-left: 3px solid #006400;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border-radius: 6px;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* ----- Carte ----- */
+.map-container img {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  max-width: 100%;
+  height: auto;
+}
+
+/* ----- Footer ----- */
+footer {
+  text-align: center;
+  padding: 30px 10px;
+  font-size: 0.9rem;
+  color: #555;
+  background: #f5f5f5;
+  margin-top: 60px;
+}
+
+/* ----- Responsive ----- */
+@media (max-width: 768px) {
+  .container {
+    padding: 80px 15px 40px;
+  }
+  .container h1 {
+    font-size: 1.9rem;
+  }
+  .section h2 {
+    font-size: 1.4rem;
+  }
+  .tabs {
+    flex-direction: column;
+  }
+  .tab-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

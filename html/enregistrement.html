@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ambassade du Congo - Enregistrement</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../css/enregistrement.css">
+</head>
+<body>
+
+ <!-- ===== HEADER ===== -->
+  <header>
+    <a href=".index.html" class="logo">
+      <img src="../images/armoirie-congo-brazzaville-en-couleur-logo-F4A08F6DBD-seeklogo.com.png" alt="Logo Ambassade du Congo">
+      <span>Ambassade du Congo</span>
+    </a>
+    <nav class="navbar">
+      <ul class="menu">
+        <li><a href="../index.html">Accueil</a>
+        </li>
+        <li><a href="#">L'ambassade</a>
+          <ul class="submenu">
+            <li><a href="ambassadeur.html">L'ambassadeur</a></li>
+            <li><a href="../html/apropos.html">Ambassade<br>& Consulat</a></li>
+            <li><a href="#">OGES</a></li>
+            <li><a href="#">Actualités</a></li>
+            <li><a href="#">Discours &<br>allocutions</a></li>
+            <li><a href="#">Galerie photos</a></li>
+            <li><a href="#">Emplois</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Services consulaires</a>
+          <ul class="submenu">
+            <li><a href="#">Visas</a></li>
+            <li><a href="../html/passeport.html">Passeports</a></li>
+            <li><a href="#">Démarches en ligne</a></li>
+            <li><a href="../html/tarifs.html">Tarifs & actes consulaires</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Le Congo</a>
+          <ul class="submenu">
+            <li><a href="../html/connaitre-congo.html">Notre pays</a></li>
+            <li><a href="../html/armoiries.html">Drapeau, Armoiries et Hymne</a></li>
+            <li><a href="../html/histoire.html">Histoire et cartographie</a></li>
+            <li><a href="../html/culture.html">Sport, culture et art</a></li>
+            <li><a href="#">Visiter le Congo</a></li>
+            <li><a href="#">Informations</a></li>
+            <li><a href="../html/adresses.html">Adresses utiles</a></li>
+            <li><a href="#">Séjourner</a></li>
+            <li><a href="#">Office du tourisme</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Juridiction</a>
+          <ul class="submenu">
+            <li><a href="#">France</a></li>
+            <li><a href="#">Espagne</a></li>
+            <li><a href="#">Portugal</a></li>
+            <li><a href="#">Monaco</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Diaspora</a>
+          <ul class="submenu">
+            <li><a href="#">Communauté congolaise</a></li>
+            <li><a href="#">Alertes</a></li>
+          </ul>
+        <li class="login-icon">
+  <a href="#">
+    <img src="../images/login.png" alt="Connexion" class="icon-login">
+    <span class="tooltip">Mon compte</span>
+  </a>
+  <ul class="submenu">
+    <li><a href="../html/histoire.html">Connexion</a></li>
+    <li><a href="../html/enregistrement.html">Enregistrement</a></li>
+  </ul>
+</li>
+    </ul>
+    </nav>
+  </header>
+<div class="container">
+    <h1>Formulaire d’Enregistrement</h1>
+
+    <!-- Bloc d’avertissement -->
+    <div class="alert">
+      <p><strong>⚠️ Important :</strong><br>
+      L’obtention de la <strong>carte consulaire</strong> est obligatoire avant toute demande d’acte consulaire (passeport, dossier PACS, dossier mariage, procuration, laissez-passer, etc.).  
+      Tous les ressortissants congolais doivent s’y conformer.</p>
+
+      <p><strong>NB :</strong> L’enregistrement en ligne est <u>strictement individuel</u>.  
+      Un seul compte par personne est nécessaire pour effectuer l’ensemble des démarches administratives.</p>
+    </div>
+
+    <form id="registrationForm">
+
+      <!-- Informations personnelles -->
+      <div class="form-section">
+        <h2>Informations personnelles</h2>
+        <div class="form-group photo-upload">
+          <label>Photo d'identité</label>
+          <input type="file" accept="image/*">
+        </div>
+        <div class="form-group"><label>Nom(s) <span class="required">*</span></label><input type="text" required></div>
+        <div class="form-group"><label>Prénom(s) <span class="required">*</span></label><input type="text" required></div>
+        <div class="form-group"><label>Nom de jeune fille</label><input type="text"></div>
+        <div class="form-group"><label>Nom de l’époux/épouse</label><input type="text"></div>
+        <div class="form-group"><label>État matrimonial <span class="required">*</span></label>
+          <select required>
+            <option value="">-- Choisir --</option>
+            <option>Célibataire</option>
+            <option>Marié(e)</option>
+            <option>Divorcé(e)</option>
+            <option>Veuf(ve)</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Taille</label><input type="text"></div>
+        <div class="form-group"><label>Profession <span class="required">*</span></label><input type="text" required></div>
+        <div class="form-group"><label>Fonction</label><input type="text"></div>
+        <div class="form-group"><label>Entreprise</label><input type="text"></div>
+        <div class="form-group"><label>Nationalité de l’époux/épouse</label><input type="text"></div>
+        <div class="form-group"><label>Couleur des cheveux</label><input type="text"></div>
+        <div class="form-group"><label>Couleur des yeux</label><input type="text"></div>
+        <div class="form-group"><label>Sexe <span class="required">*</span></label>
+          <select required>
+            <option value="">-- Choisir --</option>
+            <option>Masculin</option>
+            <option>Féminin</option>
+            <option>Autre</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Type Ressortissant <span class="required">*</span></label>
+          <select required>
+            <option value="">-- Choisir --</option>
+            <option>Ressortissant Congolais</option>
+            <option>Binationaux</option>
+            <option>Autres</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Date de naissance <span class="required">*</span></label><input type="date" required></div>
+        <div class="form-group"><label>Lieu de naissance <span class="required">*</span></label><input type="text" required></div>
+        <div class="form-group"><label>Nationalité d'origine</label><input type="text"></div>
+      </div>
+
+      <!-- Informations pays de résidence -->
+      <div class="form-section">
+        <h2>Informations pays de résidence</h2>
+        <div class="form-group"><label>Pays de résidence <span class="required">*</span></label><input type="text" required></div>
+        <div class="form-group"><label>Date d’arrivée <span class="required">*</span></label><input type="date" required></div>
+        <div class="form-group"><label>Antécédent judiciaire</label>
+          <select>
+            <option>Oui</option>
+            <option>Non</option>
+            <option>Ne sait pas</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Téléphone portable 1 <span class="required">*</span></label><input type="tel" required></div>
+        <div class="form-group"><label>Téléphone portable 2</label><input type="tel"></div>
+        <div class="form-group"><label>Téléphone fixe</label><input type="tel"></div>
+        <div class="form-group"><label>Adresse de résidence <span class="required">*</span></label><textarea required></textarea></div>
+        <div class="form-group"><label>Code postal <span class="required">*</span></label><input type="text" required></div>
+        <div class="form-group"><label>Ville <span class="required">*</span></label><input type="text" required></div>
+        <div class="form-group"><label>Email du ressortissant <span class="required">*</span></label><input type="email" required></div>
+      </div>
+
+      <!-- Acte de naissance -->
+      <div class="form-section">
+        <h2>Acte de naissance</h2>
+        <div class="form-group"><label>Numéro de l'acte</label><input type="text"></div>
+        <div class="form-group"><label>Date de délivrance</label><input type="date"></div>
+        <div class="form-group"><label>Organisme délivrant</label><input type="text"></div>
+        <div class="form-group"><label>Numéro de jugement</label><input type="text"></div>
+        <div class="form-group"><label>Déclarant de l'acte</label><input type="text"></div>
+      </div>
+
+      <!-- Contact pays d'origine -->
+      <div class="form-section">
+        <h2>Contacts au pays d’origine</h2>
+        <h3>Contact 1</h3>
+        <div class="form-group"><label>Nom et prénom(s) <span class="required">*</span></label><input type="text" required></div>
+        <div class="form-group"><label>Lien de parenté <span class="required">*</span></label><input type="text" required></div>
+        <div class="form-group"><label>Adresse</label><input type="text"></div>
+        <div class="form-group"><label>Département</label><input type="text"></div>
+        <div class="form-group"><label>Profession du père</label><input type="text"></div>
+        <div class="form-group"><label>Email</label><input type="email"></div>
+        <div class="form-group"><label>Téléphone <span class="required">*</span></label><input type="tel" required></div>
+        <div class="form-group"><label>Commune/District</label><input type="text"></div>
+
+        <h3>Contact 2</h3>
+        <div class="form-group"><label>Nom et prénom(s) <span class="required">*</span></label><input type="text" required></div>
+        <div class="form-group"><label>Lien de parenté <span class="required">*</span></label><input type="text" required></div>
+        <div class="form-group"><label>Adresse</label><input type="text"></div>
+        <div class="form-group"><label>Département</label><input type="text"></div>
+        <div class="form-group"><label>Profession du père</label><input type="text"></div>
+        <div class="form-group"><label>Email</label><input type="email"></div>
+        <div class="form-group"><label>Téléphone <span class="required">*</span></label><input type="tel" required></div>
+        <div class="form-group"><label>Commune/District</label><input type="text"></div>
+      </div>
+
+      <!-- Urgence -->
+      <div class="form-section">
+        <h2>Personne à prévenir en cas d'urgence</h2>
+        <div class="form-group"><label>Nom(s) <span class="required">*</span></label><input type="text" required></div>
+        <div class="form-group"><label>Prénom(s) <span class="required">*</span></label><input type="text" required></div>
+        <div class="form-group"><label>Adresse</label><input type="text"></div>
+        <div class="form-group"><label>Téléphone <span class="required">*</span></label><input type="tel" required></div>
+        <div class="form-group"><label>Lien de parenté <span class="required">*</span></label><input type="text" required></div>
+      </div>
+
+      <!-- Pièce d'identité -->
+      <div class="form-section">
+        <h2>Pièce d'identité</h2>
+        <div class="form-group"><label>Type de pièce</label>
+          <select>
+            <option>Carte Nationale</option>
+            <option>Passeport</option>
+            <option>Permis de conduire</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Numéro</label><input type="text"></div>
+        <div class="form-group"><label>Délivré le</label><input type="date"></div>
+        <div class="form-group"><label>Date de fin de validité</label><input type="date"></div>
+        <div class="form-group"><label>Établi par</label><input type="text"></div>
+        <div class="form-group"><label>Lieu de délivrance</label><input type="text"></div>
+      </div>
+
+      <!-- Fichiers -->
+      <div class="form-section">
+        <h2>Documents (10 fichiers max)</h2>
+        <div class="file-inputs">
+          <input type="file" accept=".jpg,.jpeg,.png,.pdf"><br>
+          <input type="file" accept=".jpg,.jpeg,.png,.pdf"><br>
+          <input type="file" accept=".jpg,.jpeg,.png,.pdf"><br>
+          <input type="file" accept=".jpg,.jpeg,.png,.pdf"><br>
+          <input type="file" accept=".jpg,.jpeg,.png,.pdf"><br>
+          <input type="file" accept=".jpg,.jpeg,.png,.pdf"><br>
+          <input type="file" accept=".jpg,.jpeg,.png,.pdf"><br>
+          <input type="file" accept=".jpg,.jpeg,.png,.pdf"><br>
+          <input type="file" accept=".jpg,.jpeg,.png,.pdf"><br>
+          <input type="file" accept=".jpg,.jpeg,.png,.pdf">
+        </div>
+      </div>
+
+      <div style="text-align:center;">
+        <button type="submit">Soumettre</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("registrationForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      alert("Formulaire soumis avec succès (connexion à la base de données à ajouter plus tard).");
+    });
+  </script>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>&copy; 2025 Ambassade du Congo en France - Tous droits réservés</p>
+  </footer>
+   
+</body>
+</html>
