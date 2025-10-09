@@ -3,9 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ambassade du Congo - Paiement</title>
+  <title>Ambassade du Congo – Démarches en ligne</title>
+
+  <!-- Feuilles de style -->
   <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="../css/Paiement.css">
+  <link rel="stylesheet" href="../css/demarches-en-ligne.css">
+  <!-- Icônes Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
@@ -32,7 +36,7 @@
           <ul class="submenu">
             <li><a href="../html/visas.html">Visas</a></li>
             <li><a href="../html/passeport.html">Passeports</a></li>
-            <li><a href="../html/demarches-en-ligne.html">Démarches en ligne</a></li>
+            <li><a href="demarches-en-ligne.html">Démarches en ligne</a></li>
             <li><a href="../html/tarifs.html">Tarifs & actes consulaires</a></li>
           </ul>
         </li>
@@ -77,22 +81,98 @@
     </div>
   </header>
 
-  <div class="form-container">
-
-     <div class="alert">
-    Votre paiement est sécurisé. <br>Veuillez remplir soigneusement les champs ci-dessous.
-  </div>
-    <h2>Paiement en ligne</h2>
-    <form>
-      <input type="text" placeholder="Nom sur la carte" required>
-      <input type="text" placeholder="Numéro de carte" maxlength="16" required>
-      <input type="text" placeholder="MM/AA" maxlength="5" required>
-      <input type="text" placeholder="CVC" maxlength="3" required>
-      <button type="submit">Payer</button>
-    </form>
+<main class="container">
+      <div class="hero-content">
+    <h1>AMBASSADE DE LA RÉPUBLIQUE DU CONGO EN FRANCE</h1>
+    <p class="sub">
+      Bienvenue sur <strong>le site de l'Ambassade du Congo</strong><br>
+      Quelle démarche consulaire souhaitez-vous effectuer aujourd'hui&nbsp;?
+    </p>
+    <div class="cta">
+      <a href="../html/enregistrement.html" class="btn primary">S'enregistrer / Demander un visa</a>
+      <a href="../html/login.html" class="btn secondary">Se connecter</a>
+    </div>
   </div>
 
-  
+  <!-- A propos -->
+  <section class="section fade">
+    <h2>A&nbsp;propos</h2>
+    <p>
+      Ce site est un ensemble de téléservices proposés par l’Ambassade du Congo Brazzaville en France.
+      Créez votre espace personnel, gagnez du temps et effectuez toutes vos démarches en ligne en toute simplicité,
+      avec un accompagnement en temps réel.
+    </p>
+  </section>
+
+  <!-- Nos services -->
+  <section class="section services fade">
+    <h2>Nos services</h2>
+    <div class="grid">
+      <div class="card"><i class="fa-solid fa-file-signature icon"></i><h3>Demander un acte consulaire</h3></div>
+      <div class="card"><i class="fa-solid fa-shield-check icon"></i><h3>Vérifier l'authenticité d'un acte</h3></div>
+      <div class="card"><i class="fa-solid fa-user-plus icon"></i><h3>S'enregistrer sur GIRAFE</h3></div>
+      <div class="card"><i class="fa-solid fa-passport icon"></i><h3>Suivre &amp; payer un passeport CEMAC</h3></div>
+      <div class="card"><i class="fa-solid fa-stamp icon"></i><h3>Demander &amp; payer un visa</h3></div>
+      <div class="card"><i class="fa-solid fa-eye icon"></i><h3>Suivre une demande de visa</h3></div>
+    </div>
+    <p class="horaire">
+      <strong>Girafe – Service consulaire</strong><br>
+      Horaires de travail (sans interruption) : 09h00 – 16h00.
+    </p>
+  </section>
+
+  <!-- Liens utiles -->
+  <section class="section fade">
+    <h2>Liens utiles</h2>
+    <ul class="links">
+      <li><a href="#"><i class="fa-solid fa-globe"></i> OGES</a></li>
+      <li><a href="#"><i class="fa-solid fa-landmark"></i> Ambassade du Congo</a></li>
+      <li><a href="#"><i class="fa-solid fa-newspaper"></i> Actualités</a></li>
+      <li><a href="#"><i class="fa-solid fa-list"></i> Nos services</a></li>
+      <li><a href="#"><i class="fa-solid fa-file-signature"></i> Demande d'acte consulaire</a></li>
+      <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i> Vérifier une demande</a></li>
+      <li><a href="#"><i class="fa-solid fa-passport"></i> Visa / Suivi de visa</a></li>
+      <li><a href="#"><i class="fa-solid fa-id-card"></i> Passeport</a></li>
+      <li><a href="#"><i class="fa-solid fa-scale-balanced"></i> Mentions légales</a></li>
+    </ul>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq fade">
+    <h2>F.A.Q</h2>
+    <details>
+      <summary>L’obtention de la carte consulaire est-elle obligatoire ?</summary>
+      <p>L’obtention de la carte consulaire est un préalable à toute demande d’actes consulaires (passeport, mariage, procuration, etc.).</p>
+    </details>
+    <details>
+      <summary>Je me suis enregistré mais je n’ai pas reçu mes identifiants.</summary>
+      <p>Le compte est actif après vérification de vos documents. Vous recevrez votre identifiant et mot de passe par email une fois la vérification terminée.</p>
+    </details>
+    <details>
+      <summary>Que fournir pour une carte consulaire ?</summary>
+      <p>Photo d’identité (fond blanc), acte de naissance, passeport ou carte nationale, justificatif étudiant si besoin, et 8&nbsp;€ de frais.</p>
+    </details>
+    <details>
+      <summary>Renouvellement de passeport biométrique CEMAC</summary>
+      <p>Acte de naissance, carte consulaire, photo 35x45, ancien passeport, justificatifs selon la situation, certificat de perte si nécessaire, paiement 120&nbsp;€.</p>
+    </details>
+    <details>
+      <summary>Un seul compte GIRAFE suffit-il pour toutes les démarches ?</summary>
+      <p>Oui, l’enregistrement est individuel : un seul compte par personne suffit pour toutes les démarches.</p>
+    </details>
+    <details>
+      <summary>Demande de dossier PACS ou mariage</summary>
+      <p>Carte consulaire, pièce d'identité du futur conjoint(e), paiement 31&nbsp;€.</p>
+    </details>
+    <details>
+      <summary>Procuration</summary>
+      <p>Carte consulaire, pièce d'identité du mandataire, demande depuis votre compte GIRAFE, paiement 16&nbsp;€.</p>
+    </details>
+  </section>
+
+</main>
+
+
     <!-- ===== SECTION INFOS AVANT FOOTER ===== -->
 <section class="pre-footer-alt">
   <div class="pre-footer-inner">
@@ -150,11 +230,13 @@
 
   </div>
 </section>
-   <!-- ===== FOOTER ===== -->
-   <footer>
-    <p>&copy; 2025 Ambassade du Congo en France - Tous droits réservés</p>
-  </footer>
-    <!-- JS -->
-  <script src="../script.js"></script>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <p>&copy; 2025 Ambassade du Congo – Tous droits réservés</p>
+</footer>
+
+<!-- JS -->
+<script src="../script.js"></script>
 </body>
 </html>

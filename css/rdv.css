@@ -1,37 +1,99 @@
-/* Formulaires */
-.form-container {
-  max-width: 400px;
-  margin: 60px auto;
-  padding: 30px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-.form-container h2 {
-  margin-bottom: 20px;
-  color: var(--vert);
-}
-.form-container input,
-.form-container select,
-.form-container button {
-  width: 100%;
-  padding: 12px;
-  margin: 8px 0;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-}
-.form-container button {
-  background: var(--vert);
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-}
-.form-container button:hover {
-  background: var(--rouge);
+/* ==== Thème Congo ==== */
+:root {
+  --vert:  #009b3a;
+  --jaune: #ffd600;
+  --rouge: #d40000;
+  --gris:  #f4f4f4;
+  --ombre: rgba(0,0,0,0.12);
 }
 
-.page-content,
-.container,
-section:first-of-type {
-  padding-top: 110px;
+/* === Section rendez-vous avec bandeaux couleurs === */
+.page-rdv {
+  background: linear-gradient(135deg, var(--vert) 0%, var(--jaune) 50%, var(--rouge) 100%);
+  min-height: calc(100vh - 120px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+/* === Formulaire === */
+.form-container {
+  background: #fff;
+  width: 100%;
+  max-width: 480px;
+  padding: 40px 35px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px var(--ombre);
+  position: relative;
+  animation: slideUp .9s ease;
+}
+.form-container::before {
+  /* Liseré supérieur tricolore */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(to right, var(--vert), var(--jaune), var(--rouge));
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: var(--vert);
+  font-size: 1.8rem;
+  letter-spacing: 0.5px;
+}
+
+/* Inputs & select */
+.form-container input,
+.form-container select {
+  width: 100%;
+  padding: 14px 15px;
+  margin: 12px 0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.25s ease;
+}
+.form-container input:focus,
+.form-container select:focus {
+  border-color: var(--vert);
+  box-shadow: 0 0 8px rgba(0,155,58,0.3);
+  outline: none;
+}
+
+/* Bouton */
+.form-container button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 18px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(90deg, var(--vert), var(--jaune), var(--rouge));
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.form-container button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px var(--ombre);
+}
+
+/* Petites animations */
+@keyframes slideUp {
+  from {opacity: 0; transform: translateY(40px);}
+  to   {opacity: 1; transform: translateY(0);}
+}
+
+/* Responsive */
+@media (max-width:600px) {
+  .form-container {padding:30px 20px;}
+  .form-container h2 {font-size:1.5rem;}
 }

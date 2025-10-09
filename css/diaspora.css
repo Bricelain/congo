@@ -1,0 +1,132 @@
+:root {
+  --vert:  #009b3a;
+  --jaune: #ffd600;
+  --rouge: #d40000;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  margin: 0;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  color: #222;
+  line-height: 1.7;
+}
+
+main {
+  max-width: 1000px;
+  margin: auto;
+  padding: 120px 20px 60px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+main h1 {
+  text-align: center;
+  font-size: 2.6rem;
+  color: #0b3b2e;
+  margin-bottom: 50px;
+  position: relative;
+}
+main h1::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: -100%;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--vert), var(--jaune), var(--rouge));
+  animation: slideLine 1.4s forwards;
+}
+@keyframes slideLine { to { left: 0; } }
+
+.intro {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin-bottom: 40px;
+  text-align: justify;
+}
+
+/* Onglets */
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  gap: 10px;
+}
+.tab {
+  background: #fff;
+  border: 2px solid var(--vert);
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 600;
+}
+.tab.active {
+  background: var(--vert);
+  color: #fff;
+}
+.tab:hover {
+  background: var(--jaune);
+  border-color: var(--jaune);
+}
+
+/* Contenu des onglets */
+.tab-content {
+  display: none;
+  animation: fadeUp 0.5s ease-in-out;
+}
+.tab-content.active {
+  display: block;
+}
+@keyframes fadeUp {
+  from {opacity: 0; transform: translateY(30px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+th, td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+}
+th {
+  background: var(--vert);
+  color: #fff;
+  text-align: left;
+}
+tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+/* Listes */
+ul, ol {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  margin-bottom: 25px;
+}
+ul li, ol li {
+  margin-bottom: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  main { padding: 100px 15px; }
+  main h1 { font-size: 2.2rem; }
+  .tabs { flex-direction: column; }
+}

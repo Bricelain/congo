@@ -1,79 +1,254 @@
-h1 {
+/* ===========================================
+   Feuille de style : Page Enregistrement
+   =========================================== */
+
+body {
+  margin: 0;
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+  background: #f0f3f1;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* ---- Conteneur principal ---- */
+.enreg-container {
+  max-width: 900px;
+  margin: 100px auto 60px;
+  padding: 50px 60px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Titre principal avec ligne décorative */
+.enreg-container h1 {
   text-align: center;
+  font-size: 2.2rem;
+  color: #005a2b;
   margin-bottom: 20px;
-  font-size: 2em;
+  position: relative;
 }
-h2 {
-  background: var(--vert); color: rgb(240, 244, 245);
-  padding: 10px; border-radius: 6px; font-size: 18px;
-}
-
-.form-group { margin-bottom: 15px; }
-label { font-weight: bold; display: block; margin-bottom: 6px; }
-input, select, textarea {
-  width: 100%; padding: 8px;
-  border: 1px solid #ccc; border-radius: 6px;
-}
-.required { color: red; }
-
-.form-section {
-  margin-bottom: 30px; padding: 15px;
-  border: 1px solid #ddd; border-radius: 8px;
-  background: #fafafa;
+.enreg-container h1::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #ffce00;
+  margin: 10px auto 0;
+  border-radius: 2px;
 }
 
-button {
-  background: var(--vert); color: white;
-  border: none; padding: 12px 25px;
-  border-radius: 6px; cursor: pointer;
-}
-button:hover { background: #228B22; }
-
-.photo-upload {
-  border: 1px dashed #888;
-  padding: 15px; text-align: center;
-  border-radius: 6px; background: #f9f9f9;
-}
-
+/* Avertissement */
 .alert {
-  background: rgba(220, 20, 60, 0.1);
-  border: 1px solid var(--rouge);
-  padding: 15px; margin-bottom: 25px;
-  border-radius: 8px;
-}
-.alert strong { color: var(--rouge); }
-/* Spécifique au formulaire d’enregistrement */
-
-.form-container {
-  max-width: 800px;
-  margin: 50px auto;
-  padding: 20px;
-  background: #f9f9f9;
-  border-left: 5px solid green;
+  background: linear-gradient(135deg, #fff3cd, #ffe8a1);
+  border-left: 6px solid #e0a800;
+  padding: 18px 20px;
+  border-radius: 10px;
+  margin: 30px 0;
+  font-size: 0.95rem;
+  color: #5a4c1e;
 }
 
-.form-container h2 {
-  text-align: center;
-  color: green;
+/* ---- Sections du formulaire ---- */
+.form-section {
+  margin-top: 35px;
+  padding-top: 20px;
+  border-top: 1px dashed #ccc;
+}
+.form-section h2 {
+  color: #005a2b;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
 }
 
-form input, form select, form textarea {
+/* Champs */
+.form-group {
+  margin-bottom: 18px;
+}
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
   width: 100%;
-  margin-bottom: 15px;
-  padding: 10px;
-  border: 1px solid #ccc;
+  padding: 12px 14px;
+  border: 1px solid #ccd5d1;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  background: #fdfdfd;
+  transition: border 0.25s, box-shadow 0.25s;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #008f4a;
+  box-shadow: 0 0 6px rgba(0,143,74,0.3);
+  outline: none;
 }
 
-form button {
-  background: linear-gradient(to right, green, yellow, red);
-  color: white;
-  padding: 10px 20px;
+/* Upload photo */
+.photo-upload input[type="file"] {
   border: none;
+  padding-left: 0;
+}
+
+/* ---- Bouton ---- */
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  background: linear-gradient(90deg, #008f4a, #00a86b);
+  color: #fff;
+  font-size: 1.1rem;
+  padding: 14px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.2s, background 0.3s;
+}
+button[type="submit"]:hover {
+  background: linear-gradient(90deg, #00a86b, #00c97b);
+  transform: translateY(-2px);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .enreg-container {
+    padding: 30px 20px;
+    margin: 80px 15px 40px;
+  }
+}
+
+/* ---------- Couleurs nationales ---------- */
+:root {
+  --vert:  #009b3a;
+  --jaune: #ffd600;
+  --rouge: #d40000;
+}
+
+/* ---------- Base ---------- */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(135deg,#f8f9fa,#e9ecef);
+  color: #222;
+  line-height: 1.7;
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 120px 20px 60px;
+  animation: fadeIn 1s ease-in-out;
+}
+@keyframes fadeIn {
+  from {opacity:0; transform:translateY(20px);}
+  to   {opacity:1; transform:translateY(0);}
+}
+
+/* ---------- Titres ---------- */
+main h1 {
+  text-align: center;
+  font-size: 2.6rem;
+  color: #0b3b2e;
+  margin-bottom: 60px;
+  position: relative;
+}
+main h1::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: -100%;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg,var(--vert),var(--jaune),var(--rouge));
+  animation: slideLine 1.4s forwards;
+}
+@keyframes slideLine { to {left:0;} }
+
+main h2 {
+  font-size: 1.8rem;
+  color: #0b3b2e;
+  margin: 50px 0 20px;
+  position: relative;
+}
+main h2::before {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 70px;
+  height: 3px;
+  background: linear-gradient(90deg,var(--vert),var(--jaune),var(--rouge));
+  border-radius: 2px;
+}
+
+/* ---------- Listes ---------- */
+main ul {
+  list-style: none;          /* enlève les puces */
+  padding-left: 0;
+  margin: 0 0 30px 0;
+}
+main ul li {
+  background: #fff;
+  margin-bottom: 12px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+main ul li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+main a {
+  color: var(--vert);
+  text-decoration: none;
+  font-weight: 600;
+}
+main a:hover { text-decoration: underline; }
+
+/* ---------- Zone d’upload et aperçu ---------- */
+.upload-section {
+  margin: 40px auto;
+  padding: 20px;
+  max-width: 500px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.upload-section input[type="file"] {
+  display: block;
+  margin: 0 auto 20px;
   cursor: pointer;
 }
 
-.page-content,
-.container,
-section:first-of-type {
-  padding-top: 110px;
+/* conteneur de l’aperçu */
+.preview-container {
+  display: none; /* caché tant qu'aucune image */
+  margin-top: 15px;
 }
+
+.preview-container img {
+  max-width: 220px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  main h1 {font-size:2.2rem;}
+  main h2 {font-size:1.5rem;}
+}
+

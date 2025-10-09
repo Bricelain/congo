@@ -1,24 +1,113 @@
-h1 { text-align: center; font-size: 2.2em; margin-bottom: 30px; }
-h2 {
-  margin-top: 25px; color: var(--vert);
-  font-size: 20px; border-bottom: 2px solid var(--vert);
-  padding-bottom: 5px;
-}
-ul { margin: 10px 0 20px 20px; }
-li { margin-bottom: 6px; }
+/* ================================
+   STYLE – Page Pièces à Fournir
+   ================================ */
 
+/* -------- Base -------- */
+body {
+  margin: 0;
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+  background: #f4f6f5;
+  color: #222;
+  line-height: 1.6;
+}
+
+h1, h2 {
+  font-weight: 600;
+  color: #004d2c; /* vert foncé Congo */
+}
+
+/* -------- Conteneur principal -------- */
+.container {
+  max-width: 960px;
+  margin: 120px auto 60px;   /* espace sous le header fixe */
+  padding: 40px 30px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.08);
+}
+
+/* -------- Titres -------- */
+.container h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 35px;
+  position: relative;
+}
+.container h1::after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 4px;
+  background: #ffce00; /* jaune du drapeau */
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+.container h2 {
+  margin-top: 40px;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-left: 5px solid #008f4a;
+  padding-left: 10px;
+}
+
+/* -------- Listes -------- */
+section ul {
+  margin: 15px 0 25px 20px;
+  padding: 0;
+  list-style: none;
+}
+section ul li {
+  padding-left: 28px;
+  position: relative;
+  margin-bottom: 8px;
+}
+section ul li::before {
+  content: "•";
+  color: #008f4a;
+  position: absolute;
+  left: 0;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+/* -------- Bloc important -------- */
 .important {
-  background: rgba(220,20,60,0.1);
-  border: 1px solid var(--rouge);
-  padding: 20px; border-radius: 8px; margin-top: 30px;
+  margin-top: 40px;
+  padding: 20px 25px;
+  background: linear-gradient(135deg, #fff7cc, #fff1a8);
+  border-left: 6px solid #e0a800;
+  border-radius: 12px;
+  font-size: 0.95rem;
 }
-.important strong { color: var(--rouge); }
+.important a {
+  color: #006837;
+  font-weight: 600;
+  text-decoration: none;
+}
+.important a:hover {
+  text-decoration: underline;
+}
 
-a { color: var(--rouge); font-weight: bold; text-decoration: none; }
-a:hover { text-decoration: underline; }
+/* -------- Footer -------- */
+footer {
+  background: #004d2c;
+  color: #fff;
+  text-align: center;
+  padding: 20px 10px;
+  margin-top: 60px;
+  font-size: 0.9rem;
+}
 
-.page-content,
-.container,
-section:first-of-type {
-  padding-top: 110px;
+/* -------- Responsif -------- */
+@media (max-width: 768px) {
+  .container {
+    margin: 100px 15px 40px;
+    padding: 25px 20px;
+  }
+  .container h1 {
+    font-size: 1.8rem;
+  }
 }

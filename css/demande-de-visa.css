@@ -1,0 +1,140 @@
+/* ---------- Variables nationales ---------- */
+:root {
+  --vert:  #009b3a;
+  --jaune: #ffd600;
+  --rouge: #d40000;
+  --gris-bg: #f8f9fa;
+  --texte:  #222;
+  --accent: #008f4a;
+}
+
+/* ---------- Base ---------- */
+body {
+  margin: 0;
+  font-family: "Poppins","Segoe UI",sans-serif;
+  background: linear-gradient(135deg, var(--gris-bg), #e9ecef);
+  color: var(--texte);
+  line-height: 1.7;
+}
+
+/* ---------- Conteneur principal ---------- */
+.enreg-container {
+  max-width: 950px;
+  margin: 100px auto 60px;
+  padding: 40px 50px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  animation: fadeIn 0.8s ease-in-out;
+}
+@keyframes fadeIn { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+
+.enreg-container h1 {
+  text-align: center;
+  font-size: 2.4rem;
+  color: var(--accent);
+  margin-bottom: 30px;
+  position: relative;
+}
+.enreg-container h1::after {
+  content:"";
+  display:block;
+  width:100px;
+  height:4px;
+  margin:10px auto 0;
+  background:linear-gradient(90deg,var(--vert),var(--jaune),var(--rouge));
+  border-radius:2px;
+}
+
+/* ---------- Alert ---------- */
+.alert {
+  background: linear-gradient(135deg,#fff3cd,#ffe8a1);
+  border-left:6px solid #e0a800;
+  padding:18px 20px;
+  border-radius:10px;
+  margin:30px 0;
+  font-size:0.95rem;
+  color:#5a4c1e;
+}
+
+/* ---------- Sections ---------- */
+.form-section {
+  margin-top:40px;
+  padding-top:25px;
+  border-top:1px dashed #ccc;
+}
+.form-section h2 {
+  font-size:1.5rem;
+  color:var(--accent);
+  margin-bottom:20px;
+}
+
+/* ---------- Form controls ---------- */
+.form-group {
+  margin-bottom:18px;
+}
+.form-group label {
+  display:block;
+  font-weight:600;
+  margin-bottom:6px;
+}
+.form-group input,
+.form-group select {
+  width:100%;
+  padding:12px 14px;
+  border:1px solid #ccd5d1;
+  border-radius:12px;
+  font-size:0.95rem;
+  background:#fdfdfd;
+  transition:border .25s, box-shadow .25s;
+}
+.form-group input:focus,
+.form-group select:focus {
+  border-color:var(--accent);
+  box-shadow:0 0 6px rgba(0,143,74,0.3);
+  outline:none;
+}
+
+/* ---------- Upload ---------- */
+.upload-section {
+  text-align:center;
+  background:#fafafa;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.06);
+}
+.preview-container {
+  display:none;
+  margin-top:15px;
+}
+.preview-container img {
+  max-width:220px;
+  border-radius:12px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.2);
+}
+
+/* ---------- Bouton ---------- */
+button[type="submit"] {
+  display:block;
+  width:100%;
+  background:linear-gradient(90deg,var(--accent),#00a86b);
+  color:#fff;
+  font-size:1.1rem;
+  padding:14px;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
+  font-weight:600;
+  transition:transform 0.2s, background 0.3s;
+}
+button[type="submit"]:hover {
+  background:linear-gradient(90deg,#00a86b,#00c97b);
+  transform:translateY(-2px);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width:768px) {
+  .enreg-container {padding:25px 20px;}
+  .enreg-container h1 {font-size:2rem;}
+  .form-section h2 {font-size:1.3rem;}
+}

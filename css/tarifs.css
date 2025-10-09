@@ -1,95 +1,127 @@
-/* ===========================
-   Page Tarifs - tarifs.css
-   =========================== */
+/* =========================
+   Page Tarifs & Actes
+   ========================= */
 
-/* --- Ajustement pour header fixe --- */
+body {
+  margin: 0;
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+  background: #f5f7f6;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* --- Conteneur principal --- */
 .tarifs-container {
-  padding-top: 100px;          /* Ajustez à la hauteur réelle du header */
-  max-width: 1000px;
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  max-width: 1100px;
+  margin: 120px auto 60px; /* espace sous header fixe */
+  padding: 40px 30px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
 }
 
 /* --- Titre principal --- */
 .tarifs-container h1 {
   text-align: center;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #004d2c; /* vert profond du drapeau */
   margin-bottom: 40px;
-  font-size: 2rem;
-  color: #013220;              /* vert profond pour une touche institutionnelle */
+  position: relative;
+}
+.tarifs-container h1::after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 4px;
+  background: #ffce00; /* jaune du drapeau */
+  margin: 16px auto 0;
+  border-radius: 2px;
 }
 
-/* --- Table générale --- */
-.tarifs-container table {
+/* --- Table --- */
+table {
   width: 100%;
   border-collapse: collapse;
-  background: #ffffff;
-  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+  font-size: 1rem;
 }
 
-/* --- En-tête de table --- */
-.tarifs-container thead th {
-  background-color: #006400;   /* vert ambassade */
+thead th {
+  background: #008f4a; /* vert Congo vif */
   color: #fff;
   text-align: left;
-  padding: 14px 16px;
-  font-size: 1.1rem;
+  padding: 14px 18px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
-/* --- Corps de table --- */
-.tarifs-container tbody td {
-  padding: 12px 16px;
-  border-bottom: 1px solid #ddd;
-  vertical-align: top;
-  line-height: 1.4;
+tbody td {
+  padding: 12px 18px;
+  border-bottom: 1px solid #e0e0e0;
 }
 
-/* Alternance de lignes pour lisibilité */
-.tarifs-container tbody tr:nth-child(even) {
-  background-color: #f9f9f9;
+/* Alternance de lignes pour meilleure lisibilité */
+tbody tr:nth-child(even) {
+  background: #f9faf9;
 }
 
-/* Colonne prix mise en avant */
-.tarifs-container td.price {
+/* Prix en évidence */
+.price {
+  font-weight: 600;
+  color: #c0392b; /* rouge élégant */
   text-align: right;
-  font-weight: bold;
-  color: #006400;
-  white-space: nowrap;
 }
 
-/* Petits écrans : défilement horizontal */
-@media (max-width: 768px) {
-  .tarifs-container table {
-    display: block;
-    overflow-x: auto;
-    border: 0;
-  }
-  .tarifs-container thead {
-    display: none; /* version mobile type "cards" possible mais on garde simple */
-  }
-  .tarifs-container tbody td {
-    display: block;
-    text-align: left;
-    border-bottom: none;
-    padding: 8px 0;
-  }
-  .tarifs-container tbody tr {
-    margin-bottom: 20px;
-    display: block;
-    border-bottom: 2px solid #ddd;
-    padding: 10px;
-  }
-  .tarifs-container td.price {
-    text-align: left;
-    margin-top: 6px;
-  }
+/* Survol des lignes */
+tbody tr:hover {
+  background: #eef6f0;
+  transition: background 0.2s ease-in-out;
 }
 
-/* --- Footer --- */
+/* Footer cohérent */
 footer {
-  margin-top: 60px;
+  background: #004d2c;
+  color: #fff;
   text-align: center;
+  padding: 20px 10px;
+  margin-top: 60px;
   font-size: 0.9rem;
-  color: #555;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .tarifs-container {
+    margin: 100px 15px 40px;
+    padding: 25px 20px;
+  }
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+    width: 100%;
+  }
+  thead {
+    display: none; /* on cache l’en-tête en mobile */
+  }
+  tbody tr {
+    margin-bottom: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 12px;
+    background: #fff;
+  }
+  tbody td {
+    border: none;
+    padding: 6px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  tbody td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #004d2c;
+  }
 }
