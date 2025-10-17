@@ -1,39 +1,39 @@
-/* ====== Style harmonisé avec la page Armoiries ====== */
+/* ===== Thème institutionnel – Ambassade du Congo ===== */
 :root {
-  --vert-congo: #009b3a;
-  --jaune-congo: #ffd600;
-  --rouge-congo: #d40000;
+  --vert:  #009b3a;
+  --jaune: #ffd600;
+  --rouge: #d40000;
 }
 
-/* ----- Base ----- */
+/* ===== Base ===== */
 body {
   font-family: "Segoe UI", Roboto, sans-serif;
-  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
   margin: 0;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
   color: #222;
   line-height: 1.7;
 }
 
+/* ===== Conteneur principal ===== */
 .container {
   max-width: 1000px;
-  margin: 0 auto;
+  margin: auto;
   padding: 120px 20px 60px;
   animation: fadeIn 1s ease-in-out;
 }
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* ----- Titre principal avec trait tricolore ----- */
+/* ===== Titre principal ===== */
 .container h1 {
   text-align: center;
   font-size: 2.6rem;
-  margin: 0 0 60px;
   color: #0b3b2e;
+  margin-bottom: 50px;
   position: relative;
-  overflow: hidden;
 }
 .container h1::after {
   content: "";
@@ -42,53 +42,61 @@ body {
   left: -100%;
   width: 100%;
   height: 4px;
-  background: linear-gradient(90deg,var(--vert-congo),var(--jaune-congo),var(--rouge-congo));
-  animation: slideLine 1.5s forwards;
+  background: linear-gradient(90deg, var(--vert), var(--jaune), var(--rouge));
+  animation: slideLine 1.4s forwards;
 }
-@keyframes slideLine {
-  to { left: 0; }
-}
+@keyframes slideLine { to { left: 0; } }
 
-/* ----- Sections ----- */
-.section {
+/* ===== Blocs de contenu ===== */
+.intro, .section {
   background: #fff;
-  border-radius: 14px;
-  padding: 30px 25px;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   margin-bottom: 40px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-  animation: fadeUp 1s ease-in-out;
-}
-@keyframes fadeUp {
-  from {opacity: 0; transform: translateY(30px);}
-  to   {opacity: 1; transform: translateY(0);}
+  animation: fadeUp 0.8s ease-in-out;
+  text-align: justify;
 }
 
-.section h2 {
+.section h2, .intro h2 {
   text-align: center;
   font-size: 1.9rem;
   margin-top: 0;
   color: #0b3b2e;
+  position: relative;
 }
 
-/* ----- Tableau des langues ----- */
-.lexique {
+
+@keyframes fadeUp {
+  from {opacity: 0; transform: translateY(30px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* ===== Tableaux (Langues) ===== */
+table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
-}
-.lexique th,
-.lexique td {
-  border: 1px solid #ddd;
-  padding: 10px 14px;
-  text-align: center;
-}
-.lexique th {
-  background: var(--jaune-congo);
-  color: #000;
-  font-weight: 600;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-/* ----- Galerie de plats ----- */
+th, td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+th {
+  background: var(--vert);
+  color: #fff;
+  font-weight: 600;
+}
+tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+/* ===== Galerie de plats ===== */
 .plats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -97,31 +105,111 @@ body {
 }
 
 .plat {
-  background: #fafafa;
+  background: #fff;
   border-radius: 12px;
   overflow: hidden;
   text-align: center;
   box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-  transition: transform .4s ease;
+  transition: transform .3s ease, box-shadow .3s ease;
 }
 .plat:hover {
-  transform: scale(1.05) rotate(-1deg);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
 }
-
 .plat img {
   width: 100%;
   height: 160px;
   object-fit: cover;
 }
-
 .plat h3 {
   margin: 10px 0 6px;
-  color: var(--rouge-congo);
+  color: var(--rouge);
+  font-size: 1.2rem;
+}
+.plat p {
+  padding: 0 10px 15px;
+  font-size: 0.95rem;
+  color: #444;
 }
 
-/* ----- Responsive ----- */
+/* ===== Pré-footer (section contact, newsletter, etc.) ===== */
+.pre-footer-alt {
+  background: #0b3b2e;
+  color: #fff;
+  padding: 60px 20px;
+  margin-top: 60px;
+}
+
+.pre-footer-inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.pf-block h4 {
+  color: var(--jaune);
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.pf-block ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.pf-block ul li {
+  margin-bottom: 8px;
+}
+.pf-block ul li a {
+  color: #eee;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.pf-block ul li a:hover {
+  color: var(--jaune);
+}
+
+/* Newsletter */
+.newsletter form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.newsletter input {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+}
+.newsletter button {
+  background: var(--vert);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.newsletter button:hover {
+  background: var(--jaune);
+  color: #000;
+}
+
+/* ===== Footer ===== */
+footer {
+  background: #072c23;
+  color: #ccc;
+  text-align: center;
+  padding: 18px 10px;
+  font-size: 0.9rem;
+}
+
+/* ===== Responsive ===== */
 @media (max-width: 768px) {
   .container h1 { font-size: 2.2rem; }
-  .section h2   { font-size: 1.6rem; }
-  .plat img     { height: 140px; }
+  .section h2 { font-size: 1.6rem; }
+  .plat img { height: 140px; }
+  .pre-footer-inner { grid-template-columns: 1fr; }
 }
