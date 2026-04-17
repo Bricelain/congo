@@ -30,7 +30,7 @@ main h1 {
 /* ----- Conteneur principal ----- */
 .container {
   display: flex;
-  gap: 30px;
+  gap: 10px;
   flex-wrap: wrap;
 }
 

@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="icon" type="image/png" href="../images/armoirie-congo-brazzaville-en-couleur-logo-F4A08F6DBD-seeklogo.com.png">
-  <title>Ambassade du Congo - Paiement</title>
+  <title>Ambassade du Congo - Culture</title>
   <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="../css/Paiement.css">
+  <link rel="stylesheet" href="../css/culture.css">
 </head>
 <body>
 
@@ -43,7 +43,7 @@
             <li><a href="../html/connaitre-congo.html">Notre pays</a></li>
             <li><a href="../html/armoiries.html">Drapeau, Armoiries et Hymne</a></li>
             <li><a href="../html/histoire.html">Histoire et cartographie</a></li>
-            <li><a href="../html/culture.html">Sport, culture et art</a></li>
+            <li><a href="culture.html">Sport, culture et art</a></li>
             <li><a href="../html/visiter-le-congo.html">Visiter le Congo</a></li>
             <li><a href="../html/informations-congo.html">Informations</a></li>
             <li><a href="../html/adresses.html">Adresses utiles</a></li>
@@ -77,85 +77,75 @@
       <span></span><span></span><span></span>
     </div>
   </header>
+  <main class="dashboard container">
 
-  <div class="form-container">
+  <!-- Bienvenue -->
+  <section class="welcome">
+    <h1>Bienvenue, <span class="user-name">Jean Mbemba</span></h1>
+    <p>Numéro consulaire : <strong>CGF-2025-00489</strong></p>
+  </section>
 
-     <div class="alert">
-    Votre paiement est sécurisé. <br>Veuillez remplir soigneusement les champs ci-dessous.
-  </div>
-    <h2>Paiement en ligne</h2>
-    <form>
-      <input type="text" placeholder="Nom sur la carte" required>
-      <input type="text" placeholder="Numéro de carte" maxlength="16" required>
-      <input type="text" placeholder="MM/AA" maxlength="5" required>
-      <input type="text" placeholder="CVC" maxlength="3" required>
-      <button type="submit">Payer</button>
-    </form>
-  </div>
+  <!-- Raccourcis -->
+  <section class="dashboard-actions">
+    <a href="mes-demarches.html" class="card">
+      🛂
+      <h3>Mes démarches</h3>
+      <p>Visa, passeport, carte consulaire</p>
+    </a>
 
-  
-    <!-- ===== SECTION INFOS AVANT FOOTER ===== -->
-<section class="pre-footer-alt">
-  <div class="pre-footer-inner">
+    <a href="rendezvous.html" class="card">
+      📅
+      <h3>Mes rendez-vous</h3>
+      <p>Voir ou modifier</p>
+    </a>
 
-    <!-- Colonne Contact -->
-    <div class="pf-block">
-      <h4>📍 Nous Contacter</h4>
-      <p>37 Bis Rue Paul Valéry, 75116 Paris, France</p>
-      <p><strong>Horaires :</strong><br>09h00 – 16h00 (sans interruption)</p>
-      <p>Téléphone : +33 1 45 00 60 57<br>
-         Email : <a href="mailto:contact@ambacongof.org">contact@ambacongof.org</a></p>
-      <p>Consulat : 1, rue Léonard de Vinci – 75116 Paris</p>
-      <p><strong>Consulat honoraire – Rouen</strong><br>
-         66 Quai de Boisguilbert 76000 Rouen<br>
-         +33 7 67 02 63 30<br>
-         <a href="mailto:congoconsul.rouen@gmail.com">congoconsul.rouen@gmail.com</a>
-      </p>
-    </div>
+    <a href="paiements.html" class="card">
+      💳
+      <h3>Mes paiements</h3>
+      <p>Factures et reçus</p>
+    </a>
 
-    <!-- Colonne Ambassade -->
-    <div class="pf-block">
-      <h4>🏛 L'Ambassade</h4>
-      <ul>
-        <li><a href="../html/ambassadeur.html">L'Ambassadeur</a></li>
-        <li><a href="../html/apropos.html">À propos</a></li>
-        <li><a href="../html/actus.html">Actualités</a></li>
-        <li><a href="#">Événements</a></li>
-        <li><a href="#">Discours & Allocutions</a></li>
-        <li><a href="#">Galerie photo</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </div>
+    <a href="documents.html" class="card">
+      📄
+      <h3>Mes documents</h3>
+      <p>Téléchargements</p>
+    </a>
+  </section>
 
-    <!-- Colonne Services -->
-    <div class="pf-block">
-      <h4>🛂 Services Consulaires</h4>
-      <ul>
-        <li><a href="../html/visas.html">Visas</a></li>
-        <li><a href="../html/tarifs.html">Actes consulaires</a></li>
-        <li><a href="../html/passeport.html">Passeport</a></li>
-        <li><a href="../https://oges-congo.org/category/culture">Étudiants boursiers</a></li>
-      </ul>
-    </div>
+  <!-- Suivi -->
+  <section class="dashboard-section">
+    <h2>Suivi de vos démarches</h2>
 
-    <!-- Colonne Newsletter -->
-    <div class="pf-block newsletter">
-      <h4>📧 Lettre d'information</h4>
-      <p>Recevez nos actualités en avant-première.</p>
-      <form>
-        <input type="text" placeholder="Votre nom" required>
-        <input type="email" placeholder="Votre email" required>
-        <button type="submit">S’abonner</button>
-      </form>
-    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Démarche</th>
+          <th>Statut</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Passeport biométrique</td>
+          <td>🟡 En traitement</td>
+          <td><a href="#">Voir</a></td>
+        </tr>
+        <tr>
+          <td>Visa</td>
+          <td>🟢 Validé</td>
+          <td><a href="#">Télécharger</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
 
-  </div>
-</section>
-   <!-- ===== FOOTER ===== -->
-   <footer>
-    <p>&copy; 2025 Ambassade du Congo en France - Tous droits réservés</p>
-  </footer>
-    <!-- JS -->
-  <script src="../script.js"></script>
-</body>
-</html>
+  <!-- Notifications -->
+  <section class="dashboard-section">
+    <h2>Notifications</h2>
+    <ul class="notifications">
+      <li>📢 Retrait des passeports disponibles à partir du 15 juin</li>
+      <li>⚠️ Fermeture exceptionnelle le 20 juin</li>
+    </ul>
+  </section>
+
+</main>

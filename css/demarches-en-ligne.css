@@ -7,7 +7,7 @@
 
 /* ----- Global ----- */
 body{
-  margin:0;
+  margin-top: 50px; /* espace pour header */
   font-family:"Segoe UI",Roboto,sans-serif;
   background:var(--fond);
   color:#222;

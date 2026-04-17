@@ -1,137 +1,6 @@
-/* ===========================================
-   Feuille de style : Page Enregistrement
-   =========================================== */
-
-body {
-  margin: 0;
-  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
-  background: #f0f3f1;
-  color: #222;
-  line-height: 1.6;
-}
-
-/* ---- Conteneur principal ---- */
-.enreg-container {
-  max-width: 900px;
-  margin: 100px auto 60px;
-  padding: 50px 60px;
-  background: #ffffff;
-  border-radius: 18px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  position: relative;
-  overflow: hidden;
-}
-
-/* Titre principal avec ligne décorative */
-.enreg-container h1 {
-  text-align: center;
-  font-size: 2.2rem;
-  color: #005a2b;
-  margin-bottom: 20px;
-  position: relative;
-}
-.enreg-container h1::after {
-  content: "";
-  display: block;
-  width: 80px;
-  height: 4px;
-  background: #ffce00;
-  margin: 10px auto 0;
-  border-radius: 2px;
-}
-
-/* Avertissement */
-.alert {
-  background: linear-gradient(135deg, #fff3cd, #ffe8a1);
-  border-left: 6px solid #e0a800;
-  padding: 18px 20px;
-  border-radius: 10px;
-  margin: 30px 0;
-  font-size: 0.95rem;
-  color: #5a4c1e;
-}
-
-/* ---- Sections du formulaire ---- */
-.form-section {
-  margin-top: 35px;
-  padding-top: 20px;
-  border-top: 1px dashed #ccc;
-}
-.form-section h2 {
-  color: #005a2b;
-  font-size: 1.3rem;
-  margin-bottom: 20px;
-}
-
-/* Champs */
-.form-group {
-  margin-bottom: 18px;
-}
-.form-group label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 6px;
-  color: #333;
-}
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%;
-  padding: 12px 14px;
-  border: 1px solid #ccd5d1;
-  border-radius: 12px;
-  font-size: 0.95rem;
-  background: #fdfdfd;
-  transition: border 0.25s, box-shadow 0.25s;
-}
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  border-color: #008f4a;
-  box-shadow: 0 0 6px rgba(0,143,74,0.3);
-  outline: none;
-}
-
-/* Upload photo */
-.photo-upload input[type="file"] {
-  border: none;
-  padding-left: 0;
-}
-
-/* ---- Bouton ---- */
-button[type="submit"] {
-  display: block;
-  width: 100%;
-  background: linear-gradient(90deg, #008f4a, #00a86b);
-  color: #fff;
-  font-size: 1.1rem;
-  padding: 14px;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: transform 0.2s, background 0.3s;
-}
-button[type="submit"]:hover {
-  background: linear-gradient(90deg, #00a86b, #00c97b);
-  transform: translateY(-2px);
-}
-
-/* ---- Responsive ---- */
-@media (max-width: 768px) {
-  .enreg-container {
-    padding: 30px 20px;
-    margin: 80px 15px 40px;
-  }
-}
-
-/* ---------- Couleurs nationales ---------- */
-:root {
-  --vert:  #009b3a;
-  --jaune: #ffd600;
-  --rouge: #d40000;
-}
-
+/* ============================
+   PAGE ENREGISTREMENT
+============================ */
 /* ---------- Base ---------- */
 body {
   margin: 0;
@@ -141,114 +10,183 @@ body {
   line-height: 1.7;
 }
 
-main {
+/* ===== CONTENEUR PRINCIPAL ===== */
+.page-enregistrement .container {
   max-width: 1000px;
-  margin: 0 auto;
-  padding: 120px 20px 60px;
-  animation: fadeIn 1s ease-in-out;
-}
-@keyframes fadeIn {
-  from {opacity:0; transform:translateY(20px);}
-  to   {opacity:1; transform:translateY(0);}
+  margin: 75px auto 60px;
+  padding: 50px;
+
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: var(--shadow-soft);
+
+  animation: fadeIn 0.8s ease;
 }
 
-/* ---------- Titres ---------- */
-main h1 {
+/* ===== TITRE (VERSION ANIMÉE PREMIUM) ===== */
+.page-enregistrement h1 {
   text-align: center;
   font-size: 2.6rem;
-  color: #0b3b2e;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
+
+  background: none;
+  -webkit-text-fill-color: var(--vert), var(--jaune), var(--rouge);
+
   position: relative;
 }
-main h1::after {
+
+/* ligne animée */
+.page-enregistrement h1::after {
   content: "";
   position: absolute;
   bottom: -10px;
   left: -100%;
   width: 100%;
   height: 4px;
-  background: linear-gradient(90deg,var(--vert),var(--jaune),var(--rouge));
+
+  background: linear-gradient(90deg, var(--vert), var(--jaune), var(--rouge));
+
   animation: slideLine 1.4s forwards;
 }
-@keyframes slideLine { to {left:0;} }
 
-main h2 {
-  font-size: 1.8rem;
-  color: #0b3b2e;
-  margin: 50px 0 20px;
-  position: relative;
-}
-main h2::before {
-  content: "";
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  width: 70px;
-  height: 3px;
-  background: linear-gradient(90deg,var(--vert),var(--jaune),var(--rouge));
-  border-radius: 2px;
+/* animation */
+@keyframes slideLine {
+  to {
+    left: 0;
+  }
 }
 
-/* ---------- Listes ---------- */
-main ul {
-  list-style: none;          /* enlève les puces */
-  padding-left: 0;
-  margin: 0 0 30px 0;
-}
-main ul li {
-  background: #fff;
-  margin-bottom: 12px;
-  padding: 14px 18px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-main ul li:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-}
-
-main a {
-  color: var(--vert);
-  text-decoration: none;
-  font-weight: 600;
-}
-main a:hover { text-decoration: underline; }
-
-/* ---------- Zone d’upload et aperçu ---------- */
-.upload-section {
-  margin: 40px auto;
+/* ===== ALERT ===== */
+.page-enregistrement .alert {
+  background: rgba(255, 209, 0, 0.15);
+  border-left: 4px solid var(--jaune);
   padding: 20px;
-  max-width: 500px;
-  background: #fff;
-  border-radius: 14px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
-  text-align: center;
+  border-radius: 10px;
+  margin: 25px 0;
+  font-size: 0.95rem;
 }
 
-.upload-section input[type="file"] {
+/* ===== SECTIONS ===== */
+.page-enregistrement .form-section {
+  margin-top: 35px;
+  padding-top: 25px;
+  border-top: 1px dashed #ddd;
+}
+
+.page-enregistrement .form-section h2 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+
+  background: none;
+  -webkit-text-fill-color: var(--vert);
+}
+
+/* ===== GROUPES ===== */
+.page-enregistrement .form-group {
+  margin-bottom: 18px;
+}
+
+.page-enregistrement label {
   display: block;
-  margin: 0 auto 20px;
-  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
 }
 
-/* conteneur de l’aperçu */
-.preview-container {
-  display: none; /* caché tant qu'aucune image */
-  margin-top: 15px;
+/* ===== INPUTS ===== */
+.page-enregistrement input,
+.page-enregistrement select,
+.page-enregistrement textarea {
+  width: 100%;
+  padding: 12px 14px;
+
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #fafafa;
+
+  transition: all 0.3s ease;
 }
 
-.preview-container img {
-  max-width: 220px;
-  height: auto;
+.page-enregistrement input:focus,
+.page-enregistrement select:focus,
+.page-enregistrement textarea:focus {
+  border-color: var(--vert);
+  box-shadow: 0 0 6px rgba(0,151,57,0.3);
+  outline: none;
+}
+
+/* ===== UPLOAD PHOTO ===== */
+.page-enregistrement .upload-section {
+  margin: 20px 0;
+  padding: 20px;
+
+  background: #fff;
   border-radius: 12px;
+  text-align: center;
+
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.page-enregistrement .preview-container img {
+  max-width: 200px;
+  margin-top: 10px;
+  border-radius: 10px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-  animation: fadeIn 0.8s ease-in-out;
 }
 
-/* ---------- Responsive ---------- */
+/* ===== INPUT FILE ===== */
+.page-enregistrement input[type="file"] {
+  margin-top: 10px;
+}
+
+/* ===== DOCUMENTS ===== */
+.page-enregistrement .file-inputs input {
+  margin-bottom: 8px;
+}
+
+/* ===== BOUTON ===== */
+.page-enregistrement button[type="submit"] {
+  width: 100%;
+  max-width: 300px;
+
+  padding: 14px;
+  margin-top: 20px;
+
+  background: linear-gradient(135deg, var(--vert), #00a86b);
+  color: white;
+
+  border: none;
+  border-radius: 30px;
+
+  font-weight: 600;
+  font-size: 1rem;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.page-enregistrement button:hover {
+  background: linear-gradient(135deg, #00a86b, #00c97b);
+  transform: translateY(-2px);
+}
+
+
+
+/* ===== ANIMATION ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-  main h1 {font-size:2.2rem;}
-  main h2 {font-size:1.5rem;}
-}
 
+  .page-enregistrement .container {
+    padding: 30px 20px;
+    margin: 100px 15px 40px;
+  }
+
+  .page-enregistrement h1 {
+    font-size: 2rem;
+  }
+}

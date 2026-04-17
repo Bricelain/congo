@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mon profil – Ambassade du Congo</title>
+
+  <!-- Styles globaux -->
+  <link rel="stylesheet" href="../../style.css" />
+  <!-- Style spécifique -->
+  <link rel="stylesheet" href="../css/profil.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+    <header>
+    <a href="../../index.html" class="logo">
+      <img src="../../images/armoirie-congo-brazzaville-en-couleur-logo-F4A08F6DBD-seeklogo.com.png"
+           alt="Logo Ambassade du Congo">
+      <span>Ambassade du Congo</span>
+    </a>
+
+    <nav class="navbar">
+
+        <li class="login-icon">
+          <a href="#">
+            <img src="../../images/login1.png" alt="Connexion" class="icon-login">
+            <span class="tooltip"></span>
+          </a>
+          
+    </nav>
+
+    <div class="burger">
+      <span></span><span></span><span></span>
+    </div>
+  </header>
+
+  <!-- ===== MAIN ===== -->
+  <main class="profile-main">
+    <h1>Mon profil</h1>
+
+    <!-- Bandeau identitaire -->
+    <section class="id-panel">
+      <div class="avatar-box">
+        <img id="avatarPreview" src="../images/avatar-placeholder.png" alt="Avatar utilisateur">
+        <label class="btn-outline" for="avatarInput">Changer la photo</label>
+        <input id="avatarInput" type="file" accept="image/*" hidden>
+      </div>
+
+      <div class="id-meta">
+        <h2 id="fullName">Nom Prénom</h2>
+        <p class="muted">Ressortissant congolais – France</p>
+        <ul>
+          <li><strong>Numéro de dossier :</strong> <span>#CG-2025-001234</span></li>
+          <li><strong>Statut :</strong> Compte vérifié</li>
+          <li><strong>Dernière connexion :</strong> <span id="lastLogin">—</span></li>
+        </ul>
+        <div class="id-actions">
+          <a class="btn-ghost" href="accueiluser.html">← Retour au tableau de bord</a>
+          <button class="btn-primary" type="button">Enregistrer les modifications</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Grille des cartes/propriétés -->
+    <section class="grid-2">
+
+      <!-- Coordonnées -->
+      <form class="card" id="formContact">
+        <h3>Coordonnées</h3>
+        <div class="form-grid">
+          <div class="fg">
+            <label><em>Nom / <span>Last name</span></em> *</label>
+            <input type="text" required placeholder="Ex. MASSAMBA">
+          </div>
+          <div class="fg">
+            <label><em>Prénom(s) / <span>First name(s)</span></em> *</label>
+            <input type="text" required placeholder="Ex. Marcel">
+          </div>
+          <div class="fg">
+            <label><em>Email / <span>E-mail</span></em> *</label>
+            <input type="email" required placeholder="vous@email.com">
+          </div>
+          <div class="fg">
+            <label><em>Téléphone / <span>Phone</span></em> *</label>
+            <input type="tel" required placeholder="+33 6 12 34 56 78">
+          </div>
+          <div class="fg">
+            <label><em>Pays de résidence / <span>Country of residence</span></em> *</label>
+            <input type="text" required placeholder="France">
+          </div>
+          <div class="fg">
+            <label><em>Statut / <span>Status</span></em></label>
+            <select>
+              <option>Ressortissant congolais</option>
+              <option>Étranger résident</option>
+              <option>Visiteur</option>
+            </select>
+          </div>
+        </div>
+      </form>
+
+      <!-- Identité & Passeport -->
+      <form class="card" id="formIdentity">
+        <h3>Identité & Passeport</h3>
+        <div class="form-grid">
+          <div class="fg">
+            <label><em>Date de naissance / <span>Date of birth</span></em> *</label>
+            <input type="date" required>
+          </div>
+          <div class="fg">
+            <label><em>Lieu de naissance / <span>Place of birth</span></em> *</label>
+            <input type="text" required placeholder="Brazzaville">
+          </div>
+          <div class="fg">
+            <label><em>Nationalité / <span>Nationality</span></em> *</label>
+            <input type="text" required placeholder="Congolaise">
+          </div>
+          <div class="fg">
+            <label><em>Num. passeport / <span>Passport no.</span></em> *</label>
+            <input type="text" required placeholder="AA1234567">
+          </div>
+          <div class="fg">
+            <label><em>Délivré le / <span>Issued on</span></em> *</label>
+            <input type="date" required>
+          </div>
+          <div class="fg">
+            <label><em>Expire le / <span>Expires on</span></em> *</label>
+            <input type="date" required>
+          </div>
+        </div>
+      </form>
+
+      <!-- Adresses -->
+      <form class="card" id="formAddresses">
+        <h3>Adresses</h3>
+        <div class="form-grid">
+          <div class="fg fg-2">
+            <label><em>Adresse principale / <span>Main address</span></em> *</label>
+            <input type="text" required placeholder="N°, rue, complément">
+          </div>
+          <div class="fg">
+            <label><em>Code postal / <span>ZIP</span></em> *</label>
+            <input type="text" required placeholder="75016">
+          </div>
+          <div class="fg">
+            <label><em>Ville / <span>City</span></em> *</label>
+            <input type="text" required placeholder="Paris">
+          </div>
+          <div class="fg fg-2">
+            <label><em>Adresse au Congo / <span>Address in Congo</span></em></label>
+            <input type="text" placeholder="Ex. 12 av. ... , Brazzaville">
+          </div>
+        </div>
+      </form>
+
+      <!-- Préférences & Notifications -->
+      <form class="card" id="formPrefs">
+        <h3>Préférences & Notifications</h3>
+        <div class="switches">
+          <label class="switch-row">
+            <span>Notifications par e-mail</span>
+            <input type="checkbox" checked><i></i>
+          </label>
+          <label class="switch-row">
+            <span>Notifications SMS</span>
+            <input type="checkbox"><i></i>
+          </label>
+          <label class="switch-row">
+            <span>Recevoir la lettre d’information</span>
+            <input type="checkbox" checked><i></i>
+          </label>
+          <label class="switch-row">
+            <span>Langue préférée : Français</span>
+            <input type="checkbox" checked><i></i>
+          </label>
+        </div>
+      </form>
+
+      <!-- Sécurité -->
+      <form class="card" id="formSecurity">
+        <h3>Sécurité du compte</h3>
+        <div class="form-grid">
+          <div class="fg">
+            <label><em>Mot de passe actuel / <span>Current password</span></em> *</label>
+            <input type="password" required id="pwdCurrent">
+          </div>
+          <div class="fg">
+            <label><em>Nouveau mot de passe / <span>New password</span></em> *</label>
+            <input type="password" required id="pwdNew">
+          </div>
+          <div class="fg">
+            <label><em>Confirmer / <span>Confirm</span></em> *</label>
+            <input type="password" required id="pwdConfirm">
+          </div>
+        </div>
+        <div class="security-actions">
+          <button type="button" class="btn-ghost" id="togglePwd">Afficher/Masquer</button>
+          <button type="submit" class="btn-primary">Mettre à jour le mot de passe</button>
+        </div>
+      </form>
+
+      <!-- Pièces jointes -->
+      <section class="card">
+        <h3>Pièces jointes</h3>
+        <div class="files">
+          <div class="file-row">
+            <span>Photo identité.jpeg</span>
+            <a href="#" class="link">Télécharger</a>
+          </div>
+          <div class="file-row">
+            <span>Passeport.pdf</span>
+            <a href="#" class="link">Télécharger</a>
+          </div>
+          <div class="file-row">
+            <span>Justif. domicile.pdf</span>
+            <a href="#" class="link">Télécharger</a>
+          </div>
+        </div>
+        <label class="btn-outline" for="fileAdd">Ajouter un document</label>
+        <input id="fileAdd" type="file" hidden accept=".jpg,.jpeg,.png,.pdf">
+      </section>
+
+      <!-- Activité récente -->
+      <section class="card">
+        <h3>Activité récente</h3>
+        <ul class="timeline">
+          <li><span class="dot"></span><p><strong>Visa</strong> – dépôt de la demande n° VG-2025-0045 <em>(15/03/2025)</em></p></li>
+          <li><span class="dot"></span><p><strong>Profil</strong> – coordonnées mises à jour <em>(02/03/2025)</em></p></li>
+          <li><span class="dot"></span><p><strong>Rendez-vous</strong> confirmé pour le 12/04/2025 à 10:30 <em>(28/02/2025)</em></p></li>
+        </ul>
+      </section>
+
+    </section>
+  </main>
+
+  <!-- ===== PRE-FOOTER ===== -->
+  <section class="pre-footer-alt">
+    <div class="pre-footer-inner">
+      <div class="pf-block">
+        <h4>📍 Nous Contacter</h4>
+        <p>37 Bis Rue Paul Valéry, 75116 Paris, France</p>
+        <p><strong>Horaires :</strong><br>09h00 – 16h00 (sans interruption)</p>
+        <p>Téléphone : +33 1 45 00 60 57<br>
+          Email : <a href="mailto:contact@ambacongof.org">contact@ambacongof.org</a></p>
+        <p>Consulat : 1, rue Léonard de Vinci – 75116 Paris</p>
+      </div>
+      <div class="pf-block">
+        <h4>🏛 L'Ambassade</h4>
+        <ul>
+          <li><a href="../html/ambassadeur.html">L'Ambassadeur</a></li>
+          <li><a href="../html/apropos.html">À propos</a></li>
+          <li><a href="../html/actus.html">Actualités</a></li>
+          <li><a href="#">Événements</a></li>
+          <li><a href="#">Discours & Allocutions</a></li>
+          <li><a href="#">Galerie photo</a></li>
+        </ul>
+      </div>
+      <div class="pf-block">
+        <h4>🛂 Services Consulaires</h4>
+        <ul>
+          <li><a href="../html/visas.html">Visas</a></li>
+          <li><a href="../html/tarifs.html">Actes consulaires</a></li>
+          <li><a href="../html/passeport.html">Passeport</a></li>
+          <li><a href="https://oges-congo.org/category/culture" target="_blank">Étudiants boursiers</a></li>
+        </ul>
+      </div>
+      <div class="pf-block newsletter">
+        <h4>📧 Lettre d'information</h4>
+        <p>Recevez nos actualités en avant-première.</p>
+        <form>
+          <input type="text" placeholder="Votre nom" required>
+          <input type="email" placeholder="Votre email" required>
+          <button type="submit">S’abonner</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>&copy; 2025 Ambassade de la République du Congo en France – Tous droits réservés</p>
+  </footer>
+
+  <!-- JS de page -->
+  <script>
+    // Dernière connexion de démonstration
+    const lastLogin = document.getElementById('lastLogin');
+    if (lastLogin) {
+      const now = new Date();
+      lastLogin.textContent = now.toLocaleString('fr-FR', {
+        day:'2-digit', month:'2-digit', year:'numeric', hour:'2-digit', minute:'2-digit'
+      });
+    }
+
+    // Aperçu avatar
+    const avatarInput = document.getElementById('avatarInput');
+    const avatarPreview = document.getElementById('avatarPreview');
+    if (avatarInput) {
+      avatarInput.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (file) avatarPreview.src = URL.createObjectURL(file);
+      });
+    }
+
+    // Afficher/masquer mot de passe
+    const toggle = document.getElementById('togglePwd');
+    const pwdFields = ['pwdCurrent','pwdNew','pwdConfirm'].map(id => document.getElementById(id));
+    if (toggle) {
+      toggle.addEventListener('click', () => {
+        pwdFields.forEach(f => f.type = (f.type === 'password' ? 'text' : 'password'));
+      });
+    }
+  </script>
+  <script src="../../script.js"></script>
+</body>
+</html>

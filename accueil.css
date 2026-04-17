@@ -1,256 +1,481 @@
-/* ==================== VARIABLES ==================== */
-:root {
-  --vert: #009937;
-  --jaune: #ffd700;
-  --rouge: #d50032;
-  --gradient-title: linear-gradient(90deg, var(--vert), var(--jaune), var(--rouge));
-  --gradient-btn: linear-gradient(270deg, var(--vert), var(--jaune), var(--rouge), var(--vert));
-  --card-shadow: 0 10px 40px rgba(0,0,0,0.2);
-  --text-shadow-neon: 0 0 5px rgba(255,255,255,0.4);
+body {
+  margin: 0;
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+  background: #f0f3f1;
+  color: #222;
+  line-height: 1.6;
 }
 
-/* ==================== VARIABLES ==================== */
-:root {
-  --vert: #009937;
-  --jaune: #ffd700;
-  --rouge: #d50032;
-  --gradient-title: linear-gradient(90deg, var(--vert), var(--jaune), var(--rouge));
-  --card-shadow: 0 6px 25px rgba(0,0,0,0.15);
-  --btn-gradient: linear-gradient(45deg, var(--vert), var(--jaune), var(--rouge));
-}
 
-/* ==================== TITRES DE SECTION ==================== */
-.section-title {
-  text-align: center;
-  font-size: 2.4em;
-  margin-bottom: 40px;
-  font-weight: bold;
-  background: var(--gradient-title);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  position: relative;
+
+/* ============================
+   SLIDER (allégé + plus petit)
+============================ */
+
+/* ================= SLIDER PROPRE ================= */
+
+.slider {
+  max-width: 1200px;
+  height: 450px;
+  margin: 40px auto;
+  border-radius: 16px;
   overflow: hidden;
+  position: relative;
+  background: black;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
-.section-title::after {
-  content: "";
-  position: absolute;
-  left: -100%;
-  bottom: 0;
+/* CONTAINER */
+.slides {
+  display: flex;
+  width: 1000%; /* 10 slides */
+  height: 100%;
+  transition: margin-left 0.8s ease-in-out;
+}
+
+.slides input {
+  display: none;
+}
+
+/* SLIDE */
+.slide {
+  width: 10%;
+  flex-shrink: 0;
+  position: relative;
+}
+
+/* IMAGE */
+.slide img {
   width: 100%;
-  height: 4px;
-  background: var(--gradient-title);
-  animation: underline-slide 2s infinite linear;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+
+  filter: brightness(0.85);
+  transition: transform 4s ease, filter 1s ease;
 }
 
-@keyframes underline-slide {
-  0% { left: -100%; }
-  50% { left: 100%; }
-  100% { left: -100%; }
+/* effet zoom lent */
+#radio1:checked ~ .first img,
+#radio2:checked ~ .first img,
+#radio3:checked ~ .first img,
+#radio4:checked ~ .first img,
+#radio5:checked ~ .first img,
+#radio6:checked ~ .first img,
+#radio7:checked ~ .first img,
+#radio8:checked ~ .first img,
+#radio9:checked ~ .first img,
+#radio10:checked ~ .first img {
+  transform: scale(1.05);
 }
 
-/* ==================== SERVICES ==================== */
+/* ===== CAPTION ===== */
+.caption {
+  position: absolute;
+  bottom: 20%;
+  left: 8%;
+  max-width: 500px;
+  color: white;
+  animation: fadeInUp 1s ease;
+}
+
+.caption h2 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  color: var(--jaune);
+}
+
+.caption p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* ===== NAVIGATION DOTS ===== */
+.navigation-manual {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.manual-btn {
+  width: 12px;
+  height: 12px;
+  background: rgba(255,255,255,0.4);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.manual-btn:hover {
+  background: var(--jaune);
+  transform: scale(1.2);
+}
+
+/* ===== AUTO NAV ===== */
+.navigation-auto {
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.navigation-auto div {
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--jaune);
+  border-radius: 50%;
+}
+
+/* ===== POSITION SLIDES ===== */
+#radio1:checked ~ .first { margin-left: 0; }
+#radio2:checked ~ .first { margin-left: -10%; }
+#radio3:checked ~ .first { margin-left: -20%; }
+#radio4:checked ~ .first { margin-left: -30%; }
+#radio5:checked ~ .first { margin-left: -40%; }
+#radio6:checked ~ .first { margin-left: -50%; }
+#radio7:checked ~ .first { margin-left: -60%; }
+#radio8:checked ~ .first { margin-left: -70%; }
+#radio9:checked ~ .first { margin-left: -80%; }
+#radio10:checked ~ .first { margin-left: -90%; }
+
+/* ===== DOT ACTIVE ===== */
+#radio1:checked ~ .navigation-auto .auto-btn1,
+#radio2:checked ~ .navigation-auto .auto-btn2,
+#radio3:checked ~ .navigation-auto .auto-btn3,
+#radio4:checked ~ .navigation-auto .auto-btn4,
+#radio5:checked ~ .navigation-auto .auto-btn5,
+#radio6:checked ~ .navigation-auto .auto-btn6,
+#radio7:checked ~ .navigation-auto .auto-btn7,
+#radio8:checked ~ .navigation-auto .auto-btn8,
+#radio9:checked ~ .navigation-auto .auto-btn9,
+#radio10:checked ~ .navigation-auto .auto-btn10 {
+  background: var(--jaune);
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= SERVICES FIX PRO ================= */
+
+.services {
+  padding: 80px 20px;
+  text-align: center;
+}
+
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 320px));
+  justify-content: center; /* centre les cartes */
   gap: 30px;
 }
 
+/* CARD */
 .service-card {
-  background: #fff;
-  padding: 35px 25px;
-  border-radius: 16px;
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  transition: transform 0.6s cubic-bezier(.25,.8,.25,1), box-shadow 0.4s ease;
-  perspective: 1000px;
-  box-shadow: var(--card-shadow);
+  padding-bottom: 20px;
 }
 
 .service-card:hover {
-  transform: rotateY(10deg) rotateX(5deg) translateY(-15px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+  transform: translateY(-6px);
+}
+
+/* IMAGE (corrigée 🔥) */
+.service-card .icon {
+  width: 100%;
+  height: 140px; /* 🔥 plus petit */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f7;
 }
 
 .service-card .icon img {
-  height: 60px;
-  margin-bottom: 20px;
-  transition: transform 0.5s ease;
+  max-height: 90px; /* 🔥 limite la taille */
+  width: auto;
+  object-fit: contain;
 }
 
-.service-card:hover .icon img {
-  transform: rotate(20deg) scale(1.1);
-}
-
+/* TEXTE */
 .service-card h3 {
-  margin-bottom: 12px;
+  margin: 15px 10px 10px;
   color: var(--vert);
-  font-size: 1.4em;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  position: relative;
+  font-size: 1.2rem;
 }
 
-.service-card h3::before {
-  content: "";
-  width: 50px;
-  height: 3px;
-  background: var(--gradient-title);
-  position: absolute;
-  left: 50%;
-  bottom: -8px;
-  transform: translateX(-50%);
-  border-radius: 2px;
+.service-card p {
+  margin: 0 15px 15px;
+  font-size: 0.95rem;
 }
 
+/* BOUTON (vrai bouton 🔥) */
 .btn-service {
   display: inline-block;
-  margin-top: 18px;
-  padding: 12px 24px;
-  background: var(--btn-gradient);
-  background-size: 200%;
-  color: #fff;
-  border-radius: 12px;
+  padding: 10px 20px;
+  background: var(--vert);
+  color: white;
+  border-radius: 999px; /* style Apple */
   text-decoration: none;
-  font-weight: bold;
-  transition: all 0.4s ease;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
 .btn-service:hover {
-  background-position: right;
-  transform: scale(1.1) translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  background: #007a2d;
+  transform: scale(1.05);
 }
 
-/* ==================== PASSEPORT ==================== */
+/* ================= PASSEPORT ================= */
+
+
 .passeport-box {
-  background: linear-gradient(135deg, rgba(0,151,57,0.95), rgba(213,0,50,0.95));
-  color: #fff;
-  padding: 45px 30px;
-  border-radius: 18px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 25px;
-  position: relative;
-  overflow: hidden;
-}
-
-.passeport-box::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: rgba(255,255,255,0.05);
-  transform: rotate(45deg);
-  animation: shine 4s infinite linear;
-}
-
-@keyframes shine {
-  0% { transform: rotate(45deg) translateX(-100%); }
-  100% { transform: rotate(45deg) translateX(100%); }
-}
-
-.passeport-box .highlight {
-  color: var(--jaune);
-  font-weight: 900;
-  text-shadow: 0 0 10px rgba(255,255,0,0.8);
-  animation: neon-pulse 2s infinite alternate;
-}
-
-@keyframes neon-pulse {
-  0% { text-shadow: 0 0 5px rgba(255,255,0,0.4); }
-  100% { text-shadow: 0 0 25px rgba(255,255,0,1); }
+  max-width: 1200px;
+  margin: 60px auto;
+  background: linear-gradient(135deg, var(--vert), var(--jaune), var(--rouge));
+  color: white;
+  padding: 50px;
+  border-radius: 20px;
+  text-align: center;
 }
 
 .btn-white {
-  background: #fff;
+  display: inline-block;
+  margin-top: 20px;
+  background: white;
   color: var(--vert);
-  padding: 12px 24px;
-  border-radius: 12px;
-  font-weight: bold;
+  padding: 12px 25px;
+  border-radius: 10px;
   text-decoration: none;
-  transition: all 0.4s ease;
 }
 
-.btn-white:hover {
-  background: var(--jaune);
-  color: #000;
-  transform: scale(1.05) translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+.passeport.hidden h3 {
+  background: none;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: white;
+  color: white;
 }
 
-/* ==================== ACTUALITÉS ==================== */
-.actus-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  margin-top: 30px;
+/* ================= ACTUS ================= */
+
+/* ===== SECTION SERVICES ===== */
+.services {
+  padding: 80px 20px;
+  background: #f5f5f7;
 }
 
-.actus-item {
-  background: #fff;
-  padding: 18px 22px;
-  border-left: 6px solid var(--rouge);
-  border-radius: 12px;
-  box-shadow: 0 5px 18px rgba(0,0,0,0.12);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  max-width: 1300px;
+  margin: auto;
+}
+
+/* ===== CARTE ===== */
+.service-card {
+  background: white;
+  border-radius: 18px;
+  padding: 30px 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: all 0.35s ease;
   position: relative;
   overflow: hidden;
 }
 
-.actus-item:hover {
-  transform: translateX(10px) rotateZ(-1deg);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
-
-.actus-item::before {
+/* Accent couleur à gauche */
+.service-card::before {
   content: "";
   position: absolute;
-  top: 50%;
-  left: -100%;
-  width: 100%;
+  left: 0;
+  top: 0;
   height: 100%;
-  background: rgba(255,255,255,0.05);
-  transform: skewX(-20deg);
-  transition: all 0.6s ease;
+  width: 6px;
+  background: linear-gradient(to bottom, var(--vert), var(--jaune), var(--rouge));
 }
 
-.actus-item:hover::before {
-  left: 200%;
+/* Hover effet premium */
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+}
+
+/* ===== TITRES ===== */
+.service-card h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+
+  /* On enlève le dégradé ici */
+  background: none;
+  -webkit-text-fill-color: var(--vert);
+  color: var(--vert);
+}
+
+/* ===== TEXTE ===== */
+.service-card p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ===== BOUTON ===== */
+.btn-service {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  background: var(--vert);
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.btn-service:hover {
+  background: #0a7a35;
+}
+
+/* ===== ACTUALITÉS ===== */
+.actus {
+  grid-column: span 2;
+}
+
+.section-title {
+  margin-bottom: 20px;
+
+  /* garder le dégradé ici si tu veux */
+}
+
+/* Items actu */
+.actus-item {
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
 .actus-item time {
-  font-size: 0.9em;
-  color: var(--vert);
-  font-weight: bold;
+  font-size: 13px;
+  color: gray;
+}
+
+/* ===== COMMUNIQUÉ ===== */
+
+.service-card time {
   display: block;
-  margin-bottom: 8px;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
+  margin: 10px 0 20px;
+  font-size: 14px;
+  color: #888;
+  text-align: center;
+}
+
+/* Liste */
+.service-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Item */
+.service-card ul li {
+  margin-bottom: 15px;
+  position: relative;
+  padding-left: 20px;
+}
+
+/* Petit point stylé */
+.service-card ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  background: var(--vert);
+  border-radius: 50%;
+}
+
+/* Liens */
+.service-card ul li a {
+  text-decoration: none;
+  color: #5a2ca0; /* violet élégant */
+  font-size: 14px;
+  line-height: 1.5;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+/* Hover effet premium */
+.service-card ul li a:hover {
+  color: var(--vert);
+  transform: translateX(5px);
+}
+
+/* Dates en italique */
+.service-card ul li em {
+  display: block;
+  font-style: normal;
+  font-size: 13px;
+  color: #999;
+  margin-top: 5px;
 }
 
 
-/* ==================== SCROLL ANIMATION ==================== */
-.hidden {
-  opacity: 0;
-  transform: translateY(40px) rotateX(10deg);
-  transition: all 0.9s cubic-bezier(0.25, 1, 0.5, 1);
-}
 
-.hidden.show {
-  opacity: 1;
-  transform: translateY(0) rotateX(0);
-}
+/* ================= RESPONSIVE ================= */
 
-/* ==================== FONTS & BODY ==================== */
-body {
-  font-family: 'Poppins', sans-serif;
-  background: #f4f6f8;
-  color: #222;
-  line-height: 1.6;
-  overflow-x: hidden;
+@media (max-width: 768px) {
+
+  header {
+    padding: 15px 20px;
+  }
+
+  .navbar .menu {
+    display: none;
+    flex-direction: column;
+    background: white;
+    padding: 20px;
+  }
+
+  .navbar.active .menu {
+    display: flex;
+  }
+
+  .slide img {
+    height: 320px;
+  }
+
+  .caption h2 {
+    font-size: 1.6rem;
+  }
+
+  .caption p {
+    font-size: 1rem;
+  }
+
+  .service-card .icon {
+    height: 140px;
+  }
 }

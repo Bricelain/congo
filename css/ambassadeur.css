@@ -1,103 +1,140 @@
 /* ============================
-   PAGE AMBASSADEUR
-   Style spécifique
+   PAGE AMBASSADEUR – PREMIUM
 ============================ */
 
 /* ---- Section principale ---- */
 .biographie {
-  padding: 80px 20px;
-  background: #f7f7f7;
+ padding: 15px 20px 60px;
+  margin-top: 100px; /* espace pour header */
+  background: #f5f5f7;
 }
 
+/* ---- Conteneur ---- */
 .bio-container {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: center;
-  gap: 40px;
+  gap: 50px;
+
   max-width: 1100px;
   margin: 0 auto;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  padding: 40px;
+
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(10px);
+
+  border-radius: 20px;
+  padding: 50px;
+
+  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.bio-container:hover {
+  transform: translateY(-5px);
 }
 
 /* ---- Photo ---- */
+.bio-photo {
+  flex-shrink: 0;
+}
+
 .bio-photo img {
-  width: 300px;
-  height: auto;
-  border-radius: 12px;
+  width: 280px;
+  height: 360px;
   object-fit: cover;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+
+  border-radius: 16px;
+
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
   transition: transform 0.4s ease;
 }
+
 .bio-photo img:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 /* ---- Texte ---- */
 .bio-text {
   flex: 1;
-  min-width: 300px;
+  min-width: 320px;
   color: #333;
 }
 
+/* Nom */
 .bio-text h1 {
-  font-size: 2.2em;
-  color: var(--vert);
+  font-size: 2.2rem;
   margin-bottom: 5px;
+  color: var(--vert);
 }
 
+/* Fonction */
 .bio-text h2 {
-  font-size: 1.4em;
-  color: var(--rouge);
-  margin-bottom: 20px;
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 25px;
+  font-weight: 500;
 }
 
+/* Paragraphes */
 .bio-text p {
   line-height: 1.7;
   margin-bottom: 15px;
+  font-size: 0.95rem;
 }
 
+/* Sous-titres */
 .bio-text h3 {
-  margin-top: 25px;
-  margin-bottom: 10px;
-  color: var(--jaune);
-  font-size: 1.3em;
+  margin-top: 30px;
+  margin-bottom: 12px;
+  color: var(--rouge);
+  font-size: 1.2rem;
 }
 
-/* ---- Timeline ---- */
+/* ---- Timeline (premium) ---- */
 .timeline {
   list-style: none;
-  padding-left: 0;
   margin-top: 20px;
-  border-left: 4px solid var(--vert);
+  padding-left: 20px;
+  position: relative;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #ddd;
 }
 
 .timeline li {
   position: relative;
-  padding-left: 20px;
-  margin-bottom: 12px;
-  line-height: 1.6;
+  margin-bottom: 15px;
+  padding-left: 25px;
+  font-size: 0.95rem;
 }
+
+/* Point timeline */
 .timeline li::before {
   content: "";
   position: absolute;
-  left: -10px;
+  left: -2px;
   top: 6px;
-  width: 12px;
-  height: 12px;
-  background: var(--rouge);
+  width: 10px;
+  height: 10px;
+  background: var(--vert);
   border-radius: 50%;
 }
 
-/* ---- Animations discrètes ---- */
+/* ---- Animation douce ---- */
 .hidden {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
 }
+
 .hidden.show {
   opacity: 1;
   transform: translateY(0);
@@ -105,12 +142,23 @@
 
 /* ---- Responsive ---- */
 @media (max-width: 768px) {
+
   .bio-container {
     flex-direction: column;
     text-align: center;
     padding: 30px 20px;
   }
+
   .bio-photo img {
     width: 220px;
+    height: 280px;
+  }
+
+  .bio-text {
+    text-align: center;
+  }
+
+  .timeline {
+    text-align: left;
   }
 }
