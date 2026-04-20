@@ -272,14 +272,7 @@ tr:nth-child(even) {
   background: #f9f9f9;
 }
 
-/* Listes */
-ul, ol {
- 
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  margin-bottom: 25px;
-}
+
 ul li, ol li {
   margin-bottom: 8px;
 }

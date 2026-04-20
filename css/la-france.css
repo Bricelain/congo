@@ -43,6 +43,7 @@ main h1::after {
 }
 @keyframes slideLine { to { left: 0; } }
 
+
 .intro {
   background: #fff;
   padding: 25px;
@@ -89,7 +90,6 @@ main h1::after {
   from {opacity: 0; transform: translateY(30px);}
   to {opacity: 1; transform: translateY(0);}
 }
-
 /* Tables */
 table {
   width: 100%;
@@ -112,21 +112,23 @@ tr:nth-child(even) {
   background: #f9f9f9;
 }
 
-/* Listes */
-ul, ol {
- 
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  margin-bottom: 25px;
-}
-ul li, ol li {
-  margin-bottom: 8px;
-}
 
 /* Responsive */
 @media (max-width: 768px) {
   main { padding: 100px 15px; }
   main h1 { font-size: 2.2rem; }
   .tabs { flex-direction: column; }
+}
+ul li, ol li {
+  margin-bottom: 8px;
+}
+
+.list-admin {
+  list-style-type: none !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+
+.list-admin li {
+  list-style: none !important;
 }

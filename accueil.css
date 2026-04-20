@@ -212,7 +212,7 @@ body {
 }
 
 .service-card .icon img {
-  max-height: 90px; /* 🔥 limite la taille */
+  max-height: 150px; /* 🔥 limite la taille */
   width: auto;
   object-fit: contain;
 }
