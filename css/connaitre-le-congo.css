@@ -1,11 +1,14 @@
-/* ===== Thème institutionnel – Ambassade du Congo ===== */
+/* ============================
+   PAGE ARMOIRIES – VERSION PREMIUM
+============================ */
+
+/* ---------- Base ---------- */
 :root {
   --vert:  #009b3a;
   --jaune: #ffd600;
   --rouge: #d40000;
 }
 
-/* ===== Base ===== */
 body {
   font-family: "Segoe UI", Roboto, sans-serif;
   margin: 0;
@@ -13,18 +16,17 @@ body {
   color: #222;
   line-height: 1.7;
 }
-
-/* ===== Conteneur principal ===== */
-.container {
-  max-width: 1000px;
-  padding: 40px 20px 60px;
-  margin-top: 100px; /* espace pour header */
-  animation: fadeIn 1s ease-in-out;
-}
-
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Conteneur ---------- */
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 120px 20px 60px;
+  animation: fadeIn 1s ease-in-out;
 }
 
 /* ===== Titre principal ===== */
@@ -46,6 +48,7 @@ body {
   animation: slideLine 1.4s forwards;
 }
 @keyframes slideLine { to { left: 0; } }
+
 
 /* ===== Blocs de contenu ===== */
 .intro, .section {
@@ -130,80 +133,6 @@ tr:nth-child(even) {
   padding: 0 10px 15px;
   font-size: 0.95rem;
   color: #444;
-}
-
-/* ===== Pré-footer (section contact, newsletter, etc.) ===== */
-.pre-footer-alt {
-  background: #0b3b2e;
-  color: #fff;
-  padding: 60px 20px;
-  margin-top: 60px;
-}
-
-.pre-footer-inner {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 30px;
-  max-width: 1100px;
-  margin: auto;
-}
-
-.pf-block h4 {
-  color: var(--jaune);
-  margin-bottom: 15px;
-  font-size: 1.3rem;
-}
-
-.pf-block ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.pf-block ul li {
-  margin-bottom: 8px;
-}
-.pf-block ul li a {
-  color: #eee;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-.pf-block ul li a:hover {
-  color: var(--jaune);
-}
-
-/* Newsletter */
-.newsletter form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.newsletter input {
-  padding: 10px;
-  border: none;
-  border-radius: 6px;
-  outline: none;
-}
-.newsletter button {
-  background: var(--vert);
-  color: #fff;
-  border: none;
-  padding: 10px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-.newsletter button:hover {
-  background: var(--jaune);
-  color: #000;
-}
-
-/* ===== Footer ===== */
-footer {
-  background: #072c23;
-  color: #ccc;
-  text-align: center;
-  padding: 18px 10px;
-  font-size: 0.9rem;
 }
 
 /* ===== Responsive ===== */

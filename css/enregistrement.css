@@ -10,17 +10,12 @@ body {
   line-height: 1.7;
 }
 
-/* ===== CONTENEUR PRINCIPAL ===== */
-.page-enregistrement .container {
+/* ---------- Conteneur ---------- */
+.container {
   max-width: 1000px;
-  margin: 75px auto 60px;
-  padding: 50px;
-
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: var(--shadow-soft);
-
-  animation: fadeIn 0.8s ease;
+  margin: auto;
+  padding: 70px 20px 60px;
+  animation: fadeIn 1s ease-in-out;
 }
 
 /* ===== TITRE (VERSION ANIMÉE PREMIUM) ===== */
